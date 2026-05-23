@@ -197,6 +197,253 @@ main {
   margin-bottom: 12px;
 }
 
+/* ---- MOTIVATIONAL SECTION ---- */
+.motiv-section { margin-bottom: 64px; }
+
+.motiv-hero {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 56px 48px;
+  background: var(--bg2);
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+}
+.motiv-hero::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 320px; height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,181,96,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.motiv-hero-tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.motiv-hero-tag::before { content: ''; display: block; width: 20px; height: 1px; background: var(--accent); }
+.motiv-hero-title {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 400;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+.motiv-hero-title em { font-style: italic; color: var(--accent); }
+.motiv-hero-body {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 680px;
+  margin-bottom: 32px;
+}
+.motiv-quote {
+  border-left: 2px solid var(--accent);
+  padding: 16px 24px;
+  font-family: var(--serif);
+  font-size: 18px;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.6;
+  max-width: 640px;
+  background: rgba(200,181,96,0.04);
+  border-radius: 0 8px 8px 0;
+}
+.motiv-quote em { color: var(--accent); }
+.motiv-quote-mark { color: var(--accent); font-size: 24px; margin: 0 2px; }
+
+.motiv-gateway { margin-bottom: 32px; }
+.motiv-gateway-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: 16px;
+}
+.motiv-gateway-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+.motiv-gw-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  background: var(--bg2);
+  transition: border-color .2s, transform .2s;
+}
+.motiv-gw-card:hover { border-color: rgba(200,181,96,0.3); transform: translateY(-2px); }
+.motiv-gw-icon {
+  font-family: var(--serif);
+  font-size: 28px;
+  color: var(--accent);
+  margin-bottom: 12px;
+  line-height: 1;
+}
+.motiv-gw-title { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+.motiv-gw-body { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+.motiv-ai-world {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 48px;
+  background: var(--bg2);
+  margin-bottom: 32px;
+}
+.motiv-section-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: 12px;
+}
+.motiv-sub-title {
+  font-family: var(--serif);
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+.motiv-sub-title em { font-style: italic; color: var(--accent2); }
+.motiv-body-text {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 720px;
+  margin-bottom: 32px;
+}
+.motiv-ai-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+.motiv-ai-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 22px;
+  background: var(--bg3);
+  transition: border-color .2s;
+}
+.motiv-ai-card:hover { border-color: rgba(126,184,154,0.3); }
+.motiv-ai-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--accent2);
+  margin-bottom: 8px;
+  letter-spacing: .06em;
+}
+.motiv-ai-title { font-size: 14px; font-weight: 600; margin-bottom: 8px; color: var(--text); }
+.motiv-ai-body { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+.motiv-startups {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 48px;
+  background: var(--bg2);
+  margin-bottom: 32px;
+}
+.motiv-startups .motiv-sub-title em { color: var(--accent3); }
+.startup-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+.startup-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  background: var(--bg3);
+  transition: all .2s;
+}
+.startup-card:hover { border-color: rgba(196,122,90,0.3); transform: translateY(-2px); }
+.startup-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.startup-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 4px 9px;
+  border-radius: 6px;
+  background: rgba(196,122,90,0.1);
+  color: var(--accent3);
+  border: 1px solid rgba(196,122,90,0.2);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.startup-name { font-size: 16px; font-weight: 600; margin-bottom: 2px; }
+.startup-type { font-size: 11px; color: var(--dim); font-family: var(--mono); letter-spacing: .04em; }
+.startup-body { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 14px; }
+.startup-why {
+  font-size: 12px;
+  color: var(--accent3);
+  line-height: 1.6;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: rgba(196,122,90,0.06);
+  border: 1px solid rgba(196,122,90,0.12);
+}
+
+.motiv-closing {
+  border: 1px solid rgba(200,181,96,0.2);
+  border-radius: 16px;
+  padding: 48px;
+  background: rgba(200,181,96,0.04);
+  margin-bottom: 56px;
+  position: relative;
+  overflow: hidden;
+}
+.motiv-closing::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; left: -60px;
+  width: 240px; height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,181,96,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.motiv-closing-tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.motiv-closing-title {
+  font-family: var(--serif);
+  font-size: clamp(22px, 3vw, 34px);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  max-width: 640px;
+}
+.motiv-closing-body {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.85;
+  max-width: 720px;
+}
+
+@media (max-width: 900px) {
+  .motiv-hero, .motiv-ai-world, .motiv-startups, .motiv-closing { padding: 32px 24px; }
+  .startup-grid { grid-template-columns: 1fr; }
+}
+
 /* ---- OVERVIEW ---- */
 .overview-stats {
   display: grid;
@@ -450,6 +697,181 @@ footer {
     <div class="leg"><div class="leg-dot" style="background:var(--accent6)"></div>Literature in English 0475</div>
     <div class="leg"><div class="leg-dot" style="background:var(--accent7)"></div>Chemistry 0620</div>
   </div>
+
+  <!-- MOTIVATIONAL SECTION -->
+  <div class="motiv-section">
+
+    <!-- WHY FOREX -->
+    <div class="motiv-hero">
+      <div class="motiv-hero-tag">Why this works</div>
+      <h2 class="motiv-hero-title">Forex is not a detour.<br><em>It is the door.</em></h2>
+      <p class="motiv-hero-body">Most people who want to work in AI start with textbooks. They study theory in isolation — abstract equations with no emotional stakes, no feedback, no fire. The ideas that stick are the ones that matter to you personally. Forex trading matters. You watch the numbers move. You feel it when you are right. You remember why you were wrong. That emotional charge is exactly what makes mathematics unforgettable — and it is the foundation everything else is built on.</p>
+      <div class="motiv-quote">
+        <span class="motiv-quote-mark">"</span>
+        Forex trading is a fantastic hook into AI and mathematics because it is real, motivating, and directly applicable. The motivation is built in — you can <em>see</em> your models make predictions on real markets.
+        <span class="motiv-quote-mark">"</span>
+      </div>
+    </div>
+
+    <!-- GATEWAY GRID -->
+    <div class="motiv-gateway">
+      <div class="motiv-gateway-label">Why forex is a perfect gateway</div>
+      <div class="motiv-gateway-grid">
+        <div class="motiv-gw-card">
+          <div class="motiv-gw-icon">∑</div>
+          <div class="motiv-gw-title">Statistics &amp; Probability</div>
+          <p class="motiv-gw-body">Every trade is a probability experiment. Win rate, expected value, drawdown distribution — these are not abstract concepts. They are live numbers updating in your terminal every second. Statistics becomes urgent when money is on the line.</p>
+        </div>
+        <div class="motiv-gw-card">
+          <div class="motiv-gw-icon">∂</div>
+          <div class="motiv-gw-title">Calculus &amp; Optimisation</div>
+          <p class="motiv-gw-body">Gradient descent — the engine behind every neural network — is just calculus applied to minimising a loss function. You will learn it first as "how do I make my prediction less wrong?" That question makes differentiation visceral, not academic.</p>
+        </div>
+        <div class="motiv-gw-card">
+          <div class="motiv-gw-icon">⟨v⟩</div>
+          <div class="motiv-gw-title">Linear Algebra</div>
+          <p class="motiv-gw-body">Matrices power every ML model ever built. A currency correlation heatmap is a real matrix you compute yourself on real data. When you later study eigenvectors in college, you will already know what they feel like — because you have used them.</p>
+        </div>
+        <div class="motiv-gw-card">
+          <div class="motiv-gw-icon">&lt;/&gt;</div>
+          <div class="motiv-gw-title">Programming &amp; Automation</div>
+          <p class="motiv-gw-body">Code that trades is code with consequences. A bug in a trading script costs money — that feedback loop is the fastest way to become a precise, disciplined programmer. Silicon Valley's best engineers are not the ones who memorised syntax. They are the ones who built something real.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOREX IN THE AI WORLD -->
+    <div class="motiv-ai-world">
+      <div class="motiv-section-label">Forex in the AI world</div>
+      <h3 class="motiv-sub-title">The $7.5 trillion market that AI is <em>rewriting</em></h3>
+      <p class="motiv-body-text">The global foreign exchange market trades $7.5 trillion every single day — more than all the world's stock markets combined. For decades it was dominated by human traders sitting in dealing rooms, running on instinct and experience. That era is ending. AI is not just improving forex trading. It is replacing the parts that should never have been human in the first place, and creating entirely new possibilities that were impossible before.</p>
+
+      <div class="motiv-ai-grid">
+        <div class="motiv-ai-card">
+          <div class="motiv-ai-num">01</div>
+          <div class="motiv-ai-title">Large Language Models reading the world</div>
+          <p class="motiv-ai-body">GPT-class models now process central bank speeches, geopolitical news, and earnings reports in milliseconds — generating trading signals before a human analyst has finished reading the headline. The next generation of forex AI does not just read price charts. It reads the world.</p>
+        </div>
+        <div class="motiv-ai-card">
+          <div class="motiv-ai-num">02</div>
+          <div class="motiv-ai-title">Reinforcement learning agents that never sleep</div>
+          <p class="motiv-ai-body">RL agents trained on years of tick data are learning market microstructure that no human can perceive — patterns at the millisecond level, invisible to the eye. Firms like DeepMind have published research on RL for market-making. The field is wide open for people entering now.</p>
+        </div>
+        <div class="motiv-ai-card">
+          <div class="motiv-ai-num">03</div>
+          <div class="motiv-ai-title">Multimodal AI combining everything at once</div>
+          <p class="motiv-ai-body">The frontier is models that combine satellite imagery (how many cars in factory car parks?), social media sentiment, order flow data, and macroeconomic indicators — all simultaneously — to predict currency movement. This is not science fiction. Hedge funds are building it right now.</p>
+        </div>
+        <div class="motiv-ai-card">
+          <div class="motiv-ai-num">04</div>
+          <div class="motiv-ai-title">Explainable AI for regulators and institutions</div>
+          <p class="motiv-ai-body">As AI enters financial markets, regulators are demanding transparency. XAI — systems that explain their own decisions — is one of the fastest growing areas in finance AI. A model that trades and cannot explain why is legally unusable. The engineers who can make AI explainable will be extraordinarily valuable.</p>
+        </div>
+        <div class="motiv-ai-card">
+          <div class="motiv-ai-num">05</div>
+          <div class="motiv-ai-title">Decentralised finance and on-chain intelligence</div>
+          <p class="motiv-ai-body">DeFi markets — running on blockchains 24 hours a day, 7 days a week — are creating entirely new datasets that traditional finance cannot access. AI models trained on on-chain data, wallet behaviour, and liquidity pool dynamics represent a frontier where the rules have not been written yet.</p>
+        </div>
+        <div class="motiv-ai-card">
+          <div class="motiv-ai-num">06</div>
+          <div class="motiv-ai-title">AI as the equaliser</div>
+          <p class="motiv-ai-body">For the first time in history, a 25-year-old with a laptop, a Python environment, and fierce determination has access to the same fundamental tools as a $10 billion hedge fund. The data is public. The models are open source. The cloud is cheap. What separates winners is not resources — it is the quality of thinking.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SILICON VALLEY STARTUP IDEAS -->
+    <div class="motiv-startups">
+      <div class="motiv-section-label">Silicon Valley startup ideas</div>
+      <h3 class="motiv-sub-title">Six companies waiting to be <em>built</em></h3>
+      <p class="motiv-body-text">Silicon Valley does not reward people who waited for permission. Every major firm there — Google, Apple, Stripe, Airbnb — was started by someone who identified a problem, built something real, and refused to stop. Here are six startups at the intersection of forex, AI, and finance that do not exist yet in the form they should. Any one of them could be built by someone who completes these 12 projects.</p>
+
+      <div class="startup-grid">
+        <div class="startup-card">
+          <div class="startup-header">
+            <div class="startup-num">S1</div>
+            <div>
+              <div class="startup-name">CentralSignal</div>
+              <div class="startup-type">B2B SaaS · Fintech</div>
+            </div>
+          </div>
+          <p class="startup-body">An LLM-powered platform that reads central bank speeches, minutes, and press conferences in real time — across 30 countries in their native languages — and generates structured trading signals with confidence scores. Currently, every major bank employs teams of analysts to do this manually. One well-trained model replaces the repetitive part of that work. Target customers: hedge funds, prop trading firms, family offices.</p>
+          <div class="startup-why">Why now: LLMs are finally good enough. Translation quality is human-level. The data is public. No dominant player owns this yet.</div>
+        </div>
+
+        <div class="startup-card">
+          <div class="startup-header">
+            <div class="startup-num">S2</div>
+            <div>
+              <div class="startup-name">EquityOS</div>
+              <div class="startup-type">Developer tools · AI infrastructure</div>
+            </div>
+          </div>
+          <p class="startup-body">A backtesting and strategy development platform built for the AI era — where strategies are defined in natural language, converted to code by an LLM, backtested automatically, and evaluated with rigorous statistical validity checks. Today's backtesting tools (QuantConnect, Backtrader) require coding fluency. EquityOS makes quantitative strategy accessible to anyone who can think clearly.</p>
+          <div class="startup-why">Why now: LLM code generation is production-ready. The no-code/low-code wave is hitting fintech. The market is enormous — every fund manager wants to test ideas faster.</div>
+        </div>
+
+        <div class="startup-card">
+          <div class="startup-header">
+            <div class="startup-num">S3</div>
+            <div>
+              <div class="startup-name">SentimentFX</div>
+              <div class="startup-type">Data product · API business</div>
+            </div>
+          </div>
+          <p class="startup-body">A real-time alternative data feed that aggregates sentiment signals from social media, news, Reddit, earnings calls, and geopolitical events — specifically calibrated for forex pairs rather than equities. Most sentiment data products are built for stock markets. Forex pairs are driven by macro forces — central banks, trade deficits, political events — that require a completely different analytical lens.</p>
+          <div class="startup-why">Why now: Alternative data is a $1.7B market growing at 30% per year. Forex-specific sentiment data barely exists. He already understands both sides of this problem.</div>
+        </div>
+
+        <div class="startup-card">
+          <div class="startup-header">
+            <div class="startup-num">S4</div>
+            <div>
+              <div class="startup-name">RiskLayer</div>
+              <div class="startup-type">Enterprise SaaS · Compliance</div>
+            </div>
+          </div>
+          <p class="startup-body">An explainable AI risk management platform for financial institutions — one that does not just flag risks but explains in plain English why a position is dangerous, which regulatory rules it touches, and what actions would reduce exposure. Post-2008 regulation means every bank needs audit trails for trading decisions. XAI is the technology that makes AI-driven trading legally defensible.</p>
+          <div class="startup-why">Why now: Financial regulators globally are mandating AI explainability. Every bank trading with AI needs this. Enterprise compliance is a category where customers pay large contracts willingly.</div>
+        </div>
+
+        <div class="startup-card">
+          <div class="startup-header">
+            <div class="startup-num">S5</div>
+            <div>
+              <div class="startup-name">ZimboQuant</div>
+              <div class="startup-type">Emerging markets · Social impact</div>
+            </div>
+          </div>
+          <p class="startup-body">An AI-powered currency risk management platform built specifically for businesses and individuals in high-inflation, high-volatility emerging markets — starting with Zimbabwe, expanding across Africa and Latin America. Hyperinflation is not an abstraction for this founder. He lived it. That lived experience is a product insight that no Silicon Valley native can replicate. Help businesses hedge currency risk affordably where traditional hedging instruments do not exist.</p>
+          <div class="startup-why">Why now: Emerging market fintech is one of the highest-growth categories in venture capital. The founder's story is the unfair advantage. This startup gets funded on vision alone if the product works.</div>
+        </div>
+
+        <div class="startup-card">
+          <div class="startup-header">
+            <div class="startup-num">S6</div>
+            <div>
+              <div class="startup-name">TraderMind</div>
+              <div class="startup-type">Consumer AI · Education</div>
+            </div>
+          </div>
+          <p class="startup-body">An AI tutor that teaches quantitative finance and algorithmic trading through live market interaction — not video courses, not textbooks. Students write real code, run real backtests on real data, and receive AI feedback on their strategies. The platform tracks progress, adapts difficulty, and builds a portfolio of projects. It is the course this founder is living right now, productised for a million others with the same dream.</p>
+          <div class="startup-why">Why now: The creator economy meets AI tutoring is a massive space. He will have completed this exact curriculum — making him the most credible possible founder of this company.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CLOSING MOTIVATIONAL CALL -->
+    <div class="motiv-closing">
+      <div class="motiv-closing-inner">
+        <div class="motiv-closing-tag">The honest truth</div>
+        <h3 class="motiv-closing-title">Hard work in AI is not like hard work anywhere else.</h3>
+        <p class="motiv-closing-body">In most fields, working extremely hard moves you forward incrementally. In AI and quantitative finance in 2025, working extremely hard and thinking extremely clearly can move you from nowhere to the frontier in three to five years. The tools are open. The data is available. The research is public. The compute is cheap. What is scarce — genuinely scarce — is people who combine deep mathematical rigour with market intuition with the ability to build real systems. That combination is what this entire roadmap is building. Silicon Valley is not a place. It is a state of mind that rewards people who build things that did not exist before. The 12 projects on this page are not homework. They are the first 12 things on a portfolio that gets someone hired at HRT, funded by Y Combinator, or invited to speak at NeurIPS. Start with Project 1. The rest follows.</p>
+      </div>
+    </div>
+
+  </div>
+  <!-- END MOTIVATIONAL SECTION -->
 
   <div class="phase-block">
     <div class="phase-header">

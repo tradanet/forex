@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IGCSE × AI Ladder — Syllabus Mapping</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0a0a;
+  --bg2: #111111;
+  --bg3: #181818;
+  --border: rgba(255,255,255,0.08);
+  --border2: rgba(255,255,255,0.14);
+  --text: #f0ede8;
+  --muted: #888580;
+  --dim: #555250;
+  --accent: #c8b560;
+  --accent2: #7eb89a;
+  --accent3: #c47a5a;
+  --accent4: #7a9ec8;
+  --accent5: #b87ab8;
+  --accent6: #c8786a;
+  --serif: 'DM Serif Display', serif;
+  --sans: 'Instrument Sans', sans-serif;
+  --mono: 'DM Mono', monospace;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.65;
+  min-height: 100vh;
+}
+
+/* ---- GRAIN OVERLAY ---- */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---- HEADER ---- */
+header {
+  position: relative;
+  padding: 80px 48px 64px;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+.header-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: end;
+}
+.header-tag {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.header-tag::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--accent);
+}
+h1 {
+  font-family: var(--serif);
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+h1 em { font-style: italic; color: var(--accent); }
+.header-desc {
+  font-size: 15px;
+  color: var(--muted);
+  max-width: 560px;
+  line-height: 1.75;
+}
+.stats-box {
+  border: 1px solid var(--border2);
+  border-radius: 12px;
+  padding: 28px;
+  background: var(--bg2);
+}
+.stat-item {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.stat-item:last-child { border-bottom: none; }
+.stat-label { font-size: 12px; color: var(--muted); }
+.stat-val {
+  font-family: var(--mono);
+  font-size: 20px;
+  color: var(--accent);
+}
+
+/* ---- NAV ---- */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10,10,10,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 48px;
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.nav-inner::-webkit-scrollbar { display: none; }
+.nav-btn {
+  padding: 16px 20px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all .2s;
+  white-space: nowrap;
+  letter-spacing: .02em;
+}
+.nav-btn:hover { color: var(--text); }
+.nav-btn.active { color: var(--text); border-bottom-color: var(--accent); }
+
+/* ---- MAIN ---- */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px 80px;
+}
+
+/* ---- SECTIONS ---- */
+.section { display: none; padding-top: 56px; animation: fadeUp .3s ease; }
+.section.active { display: block; }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--border);
+}
+.section-intro h2 {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+.section-intro h2 em { font-style: italic; }
+.section-intro p { color: var(--muted); line-height: 1.75; font-size: 14px; }
+.code-badge {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border2);
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+/* ---- OVERVIEW ---- */
+.overview-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 56px;
+}
+.ov-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px 20px;
+  background: var(--bg2);
+  transition: border-color .2s;
+}
+.ov-card:hover { border-color: var(--border2); }
+.ov-num {
+  font-family: var(--serif);
+  font-size: 42px;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.ov-label { font-size: 12px; color: var(--muted); }
+
+.phase-block { margin-bottom: 56px; }
+.phase-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.phase-label-tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 100px;
+}
+.phase-y1 { background: rgba(200,181,96,0.12); color: var(--accent); border: 1px solid rgba(200,181,96,0.2); }
+.phase-y2 { background: rgba(126,184,154,0.12); color: var(--accent2); border: 1px solid rgba(126,184,154,0.2); }
+.phase-title { font-size: 13px; color: var(--muted); }
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 16px;
+}
+.project-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  background: var(--bg2);
+  transition: all .2s;
+  cursor: default;
+}
+.project-card:hover {
+  border-color: var(--border2);
+  background: var(--bg3);
+  transform: translateY(-1px);
+}
+.proj-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.proj-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.num-y1 { background: rgba(200,181,96,0.1); color: var(--accent); border: 1px solid rgba(200,181,96,0.15); }
+.num-y2 { background: rgba(126,184,154,0.1); color: var(--accent2); border: 1px solid rgba(126,184,154,0.15); }
+.proj-title { font-size: 15px; font-weight: 600; line-height: 1.3; }
+.proj-desc { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 14px; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag {
+  font-size: 11px;
+  padding: 3px 9px;
+  border-radius: 100px;
+  border: 1px solid;
+  white-space: nowrap;
+}
+.t-math { color: #c8b560; border-color: rgba(200,181,96,0.25); background: rgba(200,181,96,0.07); }
+.t-addmath { color: #7eb89a; border-color: rgba(126,184,154,0.25); background: rgba(126,184,154,0.07); }
+.t-phys { color: #c47a5a; border-color: rgba(196,122,90,0.25); background: rgba(196,122,90,0.07); }
+.t-cs { color: #7a9ec8; border-color: rgba(122,158,200,0.25); background: rgba(122,158,200,0.07); }
+.t-eng { color: #b87ab8; border-color: rgba(184,122,184,0.25); background: rgba(184,122,184,0.07); }
+.t-lit { color: #c8786a; border-color: rgba(200,120,106,0.25); background: rgba(200,120,106,0.07); }
+
+/* ---- SUBJECT SECTIONS ---- */
+.subj-header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px;
+  align-items: start;
+  margin-bottom: 40px;
+}
+.subj-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 500;
+}
+.subj-name { font-family: var(--serif); font-size: 28px; font-weight: 400; margin-bottom: 6px; }
+.subj-code { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+
+.mapping-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.mapping-table thead tr {
+  border-bottom: 1px solid var(--border2);
+}
+.mapping-table th {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--dim);
+  padding: 0 16px 12px 0;
+  text-align: left;
+  font-weight: 400;
+}
+.mapping-table th:last-child { padding-right: 0; }
+.mapping-table td {
+  padding: 16px 16px 16px 0;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.mapping-table td:last-child { padding-right: 0; }
+.mapping-table tr:last-child td { border-bottom: none; }
+.topic-cell {
+  font-size: 13px;
+  color: var(--muted);
+  width: 200px;
+  min-width: 160px;
+}
+.proj-cell { font-size: 14px; color: var(--text); line-height: 1.65; }
+.proj-cell strong { color: var(--accent); font-weight: 500; }
+
+/* ---- LEGEND ---- */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+  padding: 20px 24px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg2);
+}
+.leg {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.leg-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+/* ---- FOOTER ---- */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 40px 48px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--dim);
+  font-family: var(--mono);
+  letter-spacing: .04em;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 900px) {
+  header, nav, main, footer { padding-left: 24px; padding-right: 24px; }
+  .header-grid { grid-template-columns: 1fr; }
+  .stats-box { display: none; }
+  .overview-stats { grid-template-columns: repeat(2, 1fr); }
+  .section-intro { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .mapping-table .topic-cell { width: 140px; min-width: 120px; }
+}
+@media (max-width: 600px) {
+  header { padding-top: 48px; padding-bottom: 40px; }
+  h1 { font-size: 32px; }
+  .overview-stats { grid-template-columns: 1fr 1fr; }
+  .mapping-table { font-size: 13px; }
+  .mapping-table .topic-cell { min-width: 100px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-grid">
+    <div>
+      <div class="header-tag">Cambridge IGCSE × AI Projects</div>
+      <h1>Learn by <em>building.</em><br>Master by applying.</h1>
+      <p class="header-desc">A complete mapping of six Cambridge IGCSE syllabuses to 12 real AI and algorithmic trading projects — so every hour of project work reinforces exam content, and every exam topic has a living, breathing application.</p>
+    </div>
+    <div class="stats-box">
+      <div class="stat-item"><span class="stat-label">IGCSE subjects</span><span class="stat-val">6</span></div>
+      <div class="stat-item"><span class="stat-label">Year 1 projects</span><span class="stat-val">5</span></div>
+      <div class="stat-item"><span class="stat-label">Year 2 projects</span><span class="stat-val">7</span></div>
+      <div class="stat-item"><span class="stat-label">Syllabus topics mapped</span><span class="stat-val">40+</span></div>
+      <div class="stat-item"><span class="stat-label">Target exam</span><span class="stat-val">Jun '26</span></div>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <button class="nav-btn active" onclick="showSection('overview', this)">Overview</button>
+    <button class="nav-btn" onclick="showSection('math', this)">Mathematics</button>
+    <button class="nav-btn" onclick="showSection('addmath', this)">Add. Mathematics</button>
+    <button class="nav-btn" onclick="showSection('physics', this)">Physics</button>
+    <button class="nav-btn" onclick="showSection('cs', this)">Computer Science</button>
+    <button class="nav-btn" onclick="showSection('english', this)">English Language</button>
+    <button class="nav-btn" onclick="showSection('lit', this)">Literature</button>
+  </div>
+</nav>
+
+<main>
+
+<!-- OVERVIEW -->
+<div id="overview" class="section active">
+  <div class="overview-stats">
+    <div class="ov-card"><div class="ov-num" style="color:var(--accent)">6</div><div class="ov-label">IGCSE subjects mapped to projects</div></div>
+    <div class="ov-card"><div class="ov-num" style="color:var(--accent2)">12</div><div class="ov-label">AI ladder projects across 2 years</div></div>
+    <div class="ov-card"><div class="ov-num" style="color:var(--accent3)">40+</div><div class="ov-label">Distinct syllabus topics covered</div></div>
+    <div class="ov-card"><div class="ov-num" style="color:var(--accent4)">1</div><div class="ov-label">Goal — HRT, Jane Street, Citadel</div></div>
+  </div>
+
+  <div class="legend">
+    <div class="leg"><div class="leg-dot" style="background:var(--accent)"></div>Mathematics 0580</div>
+    <div class="leg"><div class="leg-dot" style="background:var(--accent2)"></div>Add. Mathematics 0606</div>
+    <div class="leg"><div class="leg-dot" style="background:var(--accent3)"></div>Physics 0625</div>
+    <div class="leg"><div class="leg-dot" style="background:var(--accent4)"></div>Computer Science 0478</div>
+    <div class="leg"><div class="leg-dot" style="background:var(--accent5)"></div>English Language 0500</div>
+    <div class="leg"><div class="leg-dot" style="background:var(--accent6)"></div>Literature in English 0475</div>
+  </div>
+
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-label-tag phase-y1">Year 1 — Phase 1</span>
+      <span class="phase-title">Now → IGCSE June 2026 · Foundation in Python, data, and market intuition</span>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="proj-head">
+          <span class="proj-num num-y1">P 01</span>
+          <span class="proj-title">Forex Price Visualizer</span>
+        </div>
+        <p class="proj-desc">Download EUR/USD historical data and plot candlestick charts in Python. First real code — teaches data handling, matplotlib, and reading price structure.</p>
+        <div class="tags">
+          <span class="tag t-math">0580 Statistics</span>
+          <span class="tag t-cs">0478 Programming</span>
+          <span class="tag t-phys">0625 Data handling</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="proj-head">
+          <span class="proj-num num-y1">P 02</span>
+          <span class="proj-title">Moving Average Calculator</span>
+        </div>
+        <p class="proj-desc">Code SMA and EMA from scratch using loops and NumPy. Every line is applied IGCSE Additional Mathematics — sequences, exponential functions, and graph plotting.</p>
+        <div class="tags">
+          <span class="tag t-math">0580 Algebra</span>
+          <span class="tag t-math">0580 Sequences</span>
+          <span class="tag t-addmath">0606 Functions</span>
+          <span class="tag t-cs">0478 Algorithms</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="proj-head">
+          <span class="proj-num num-y1">P 03</span>
+          <span class="proj-title">Currency Correlation Heatmap</span>
+        </div>
+        <p class="proj-desc">Calculate how correlated currency pairs are and visualize as a matrix heatmap. Introduces the correlation coefficient, scatter plots, and 2D arrays simultaneously.</p>
+        <div class="tags">
+          <span class="tag t-math">0580 Statistics</span>
+          <span class="tag t-math">0580 Probability</span>
+          <span class="tag t-addmath">0606 Matrices</span>
+          <span class="tag t-cs">0478 Data structures</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="proj-head">
+          <span class="proj-num num-y1">P 04</span>
+          <span class="proj-title">Trading Journal App</span>
+        </div>
+        <p class="proj-desc">Log trades, compute win rate and risk/reward. Teaches SQLite databases, app logic, and percentage arithmetic — while building a real habit of written reflection.</p>
+        <div class="tags">
+          <span class="tag t-math">0580 Percentages</span>
+          <span class="tag t-cs">0478 Databases</span>
+          <span class="tag t-eng">0500 Report writing</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="proj-head">
+          <span class="proj-num num-y1">P 05</span>
+          <span class="proj-title">News Sentiment Scraper</span>
+        </div>
+        <p class="proj-desc">Scrape forex news headlines and label them positive/negative. Combines web scraping with literary analysis — close reading of financial language for market signals.</p>
+        <div class="tags">
+          <span class="tag t-cs">0478 Networks</span>
+          <span class="tag t-eng">0500 Comprehension</span>
+          <span class="tag t-eng">0500 Writer's effect</span>
+          <span class="tag t-lit">0475 Language analysis</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-label-tag phase-y2">Year 2 — Phase 2</span>
+      <span class="phase-title">Laney College 2027–2028 · Real ML models, aligned with college coursework</span>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="proj-head">
+          <span class="proj-num num-y2">P 06</span>
+          <span class="proj-title">Predict Next-Day Price Direction</span>
+        </div>
+        <p class="proj-desc">Logistic Regression model — will EUR/USD go up or down tomorrow? Introduces supervised learning, the sigmoid function, and gradient descent optimisation.</p>
+        <div class="tags">
+          <span class="tag t-addmath">0606 Calculus</span>
+          <span class="tag t-math">0580 Probability</span>
+          <span class="tag t-cs">0478 Logic</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="proj-head">
+          <span class="proj-num num-y2">P 07</span>
+          <span class="proj-title">Backtesting Engine</span>
+        </div>
+        <p class="proj-desc">Test strategies on historical data and report Sharpe ratio, drawdown, and win rate. Teaches algorithmic thinking, rolling statistics, and formal performance reporting.</p>
+        <div class="tags">
+          <span class="tag t-addmath">0606 Inequalities</span>
+          <span class="tag t-math">0580 Statistics</span>
+          <span class="tag t-cs">0478 Algorithms</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="proj-head">
+          <span class="proj-num num-y2">P 08</span>
+          <span class="proj-title">Volatility Forecasting (ARIMA)</span>
+        </div>
+        <p class="proj-desc">Time-series models to forecast currency volatility. Price oscillations map directly to IGCSE Physics wave theory — frequency, amplitude, and period.</p>
+        <div class="tags">
+          <span class="tag t-addmath">0606 Calculus</span>
+          <span class="tag t-math">0580 Statistics</span>
+          <span class="tag t-phys">0625 Waves</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="proj-head">
+          <span class="proj-num num-y2">P 09</span>
+          <span class="proj-title">Forex Chatbot (Rule-Based)</span>
+        </div>
+        <p class="proj-desc">A chatbot that answers trading questions using decision trees. Bridges to LLMs — and the decision logic maps directly to Computer Science flowchart and logic gate work.</p>
+        <div class="tags">
+          <span class="tag t-cs">0478 Programming</span>
+          <span class="tag t-eng">0500 Directed writing</span>
+          <span class="tag t-lit">0475 Unseen prose</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="proj-head">
+          <span class="proj-num num-y2">P 10</span>
+          <span class="proj-title">Risk Management Calculator</span>
+        </div>
+        <p class="proj-desc">Optimal position sizing using probability and expected value — the Kelly Criterion in Python. Binomial probability and combinations from Additional Mathematics come alive here.</p>
+        <div class="tags">
+          <span class="tag t-addmath">0606 Permutations</span>
+          <span class="tag t-math">0580 Probability</span>
+          <span class="tag t-phys">0625 Forces/vectors</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="proj-head">
+          <span class="proj-num num-y2">P 11</span>
+          <span class="proj-title">Clustering Currency Regimes</span>
+        </div>
+        <p class="proj-desc">K-Means clustering to identify market conditions (trending, ranging, volatile). Feature vectors from Add. Maths. Unsupervised learning as pattern recognition.</p>
+        <div class="tags">
+          <span class="tag t-addmath">0606 Vectors</span>
+          <span class="tag t-math">0580 Statistics</span>
+          <span class="tag t-cs">0478 Algorithms</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="proj-head">
+          <span class="proj-num num-y2">P 12</span>
+          <span class="proj-title">Reinforcement Learning Trade Bot</span>
+        </div>
+        <p class="proj-desc">RL agent learns to buy/sell in simulation. Reward, state, action design. The most impressive portfolio piece — and connects to physics motion analogies and ethics essays.</p>
+        <div class="tags">
+          <span class="tag t-addmath">0606 Calculus</span>
+          <span class="tag t-cs">0478 Logic/algorithms</span>
+          <span class="tag t-phys">0625 Energy/motion</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MATHEMATICS -->
+<div id="math" class="section">
+  <div class="subj-header">
+    <div class="subj-icon" style="background:rgba(200,181,96,0.1);color:var(--accent);border:1px solid rgba(200,181,96,0.2)">0580</div>
+    <div>
+      <div class="subj-name">Mathematics</div>
+      <div class="subj-code">Cambridge IGCSE · 0580 · Extended tier · June 2026</div>
+    </div>
+  </div>
+  <table class="mapping-table">
+    <thead><tr><th>Syllabus topic</th><th>How the ladder project applies it</th></tr></thead>
+    <tbody>
+      <tr><td class="topic-cell">Number &amp; arithmetic</td><td class="proj-cell"><strong>P02</strong> — SMA formula coded in Python (arithmetic on price arrays). <strong>P04</strong> — P&amp;L percentages, risk/reward ratios calculated in the journal app.</td></tr>
+      <tr><td class="topic-cell">Algebra &amp; graphs</td><td class="proj-cell"><strong>P02</strong> — EMA formula as an algebraic expression coded from scratch. <strong>P06</strong> — Regression equation derived and plotted. <strong>P07</strong> — Sharpe ratio formula implemented.</td></tr>
+      <tr><td class="topic-cell">Sequences &amp; series</td><td class="proj-cell"><strong>P02</strong> — Moving averages are arithmetic sequences applied to a rolling window of price data. The period n is the sequence length.</td></tr>
+      <tr><td class="topic-cell">Coordinate geometry</td><td class="proj-cell"><strong>P01</strong> — Price plotted on time/value axes; gradient of trend line calculated. <strong>P03</strong> — Scatter plot of two correlated currency pairs with line of best fit.</td></tr>
+      <tr><td class="topic-cell">Functions &amp; graphs</td><td class="proj-cell"><strong>P02</strong> — EMA modelled as an exponential decay function. <strong>P06</strong> — Sigmoid function graphed and explained as the logistic output layer.</td></tr>
+      <tr><td class="topic-cell">Trigonometry</td><td class="proj-cell"><strong>P08</strong> — Fourier decomposition of price cycles uses sine and cosine components to identify seasonal market patterns.</td></tr>
+      <tr><td class="topic-cell">Transformations &amp; vectors</td><td class="proj-cell"><strong>P11</strong> — Each currency pair's features form a vector in n-dimensional space. K-Means moves (translates) cluster centroids iteratively.</td></tr>
+      <tr><td class="topic-cell">Probability</td><td class="proj-cell"><strong>P05</strong> — Probability that a news headline is bearish. <strong>P10</strong> — Expected value and Kelly Criterion. <strong>P12</strong> — Reward probability in reinforcement learning.</td></tr>
+      <tr><td class="topic-cell">Statistics</td><td class="proj-cell"><strong>P01</strong> — Mean, range, and spread of daily price data. <strong>P03</strong> — Correlation coefficient. <strong>P04</strong> — Win rate, average return. <strong>P07</strong> — Rolling mean and standard deviation. <strong>P08</strong> — Variance and volatility.</td></tr>
+      <tr><td class="topic-cell">Mensuration</td><td class="proj-cell"><strong>P01</strong> — Area under the equity curve represents cumulative return. Integration concept introduced visually before the calculus is formally taught.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ADD MATHS -->
+<div id="addmath" class="section">
+  <div class="subj-header">
+    <div class="subj-icon" style="background:rgba(126,184,154,0.1);color:var(--accent2);border:1px solid rgba(126,184,154,0.2)">0606</div>
+    <div>
+      <div class="subj-name">Additional Mathematics</div>
+      <div class="subj-code">Cambridge IGCSE · 0606 · Single tier · June 2026 — highest priority subject</div>
+    </div>
+  </div>
+  <table class="mapping-table">
+    <thead><tr><th>Syllabus topic</th><th>How the ladder project applies it</th></tr></thead>
+    <tbody>
+      <tr><td class="topic-cell">Functions</td><td class="proj-cell"><strong>P02</strong> — EMA is a composite function: each value is a function of the previous. <strong>P06</strong> — Logistic/sigmoid function f(x) = 1/(1+e⁻ˣ) graphed and applied.</td></tr>
+      <tr><td class="topic-cell">Quadratic functions</td><td class="proj-cell"><strong>P06</strong> — The loss function (mean squared error) is quadratic. Minimising it requires finding the vertex — completing the square has a direct machine learning application.</td></tr>
+      <tr><td class="topic-cell">Factors of polynomials</td><td class="proj-cell"><strong>P08</strong> — Polynomial fitting of price trend lines; remainder theorem appears when checking if a given period is a factor of the price cycle.</td></tr>
+      <tr><td class="topic-cell">Equations &amp; inequalities</td><td class="proj-cell"><strong>P07</strong> — Backtesting entry/exit conditions coded as inequalities (e.g. enter if EMA_fast &gt; EMA_slow). <strong>P10</strong> — Risk constraints expressed as inequality systems.</td></tr>
+      <tr><td class="topic-cell">Simultaneous equations</td><td class="proj-cell"><strong>P06</strong> — Solving for model weights during linear regression training is equivalent to solving a system of simultaneous equations (normal equations).</td></tr>
+      <tr><td class="topic-cell">Logarithms &amp; exponentials</td><td class="proj-cell"><strong>P02</strong> — EMA uses exponential smoothing; the decay constant is a direct application. <strong>P06</strong> — Log-loss function uses natural logarithm — the first time ln appears in a real application.</td></tr>
+      <tr><td class="topic-cell">Straight line graphs</td><td class="proj-cell"><strong>P06</strong> — Linear regression baseline model (y = mx + c fitted to price data). <strong>P03</strong> — Line of best fit on a correlation scatter plot.</td></tr>
+      <tr><td class="topic-cell">Circular measure</td><td class="proj-cell"><strong>P08</strong> — ARIMA seasonal components use radian-based periodic functions. Arc length and sector area reinforce the periodic structure of price cycles.</td></tr>
+      <tr><td class="topic-cell">Trigonometry</td><td class="proj-cell"><strong>P08</strong> — Fourier series applied to price data decomposes market movement into sin and cos harmonics. The double-angle and compound-angle formulae appear in the decomposition.</td></tr>
+      <tr><td class="topic-cell">Permutations &amp; combinations</td><td class="proj-cell"><strong>P10</strong> — Probability of exactly k consecutive wins in n trades uses ⁿCₖ. <strong>P05</strong> — Combinations of news sentiment factors feeding into a classification score.</td></tr>
+      <tr><td class="topic-cell">Binomial expansion</td><td class="proj-cell"><strong>P10</strong> — Binomial distribution of trade outcomes (win/loss as Bernoulli trial). The expansion (p+q)ⁿ gives the probability distribution of n trades.</td></tr>
+      <tr><td class="topic-cell">Vectors</td><td class="proj-cell"><strong>P11</strong> — Feature vectors for K-Means clustering. Vector magnitude = distance from cluster centroid. <strong>P03</strong> — Correlation matrix as a table of vector dot products.</td></tr>
+      <tr><td class="topic-cell">Matrices</td><td class="proj-cell"><strong>P03</strong> — Correlation matrix is a real matrix students compute and interpret. <strong>P06</strong> — Matrix multiplication in model training (X·W = predictions).</td></tr>
+      <tr><td class="topic-cell">Differentiation</td><td class="proj-cell"><strong>P06</strong> — Gradient descent is the derivative of the loss function. This is the single most important application: d/dx(loss) drives every neural network ever trained. <strong>P08</strong> — Rate of change of volatility over time.</td></tr>
+      <tr><td class="topic-cell">Integration</td><td class="proj-cell"><strong>P01</strong> — Area under the equity curve (total return) is a definite integral. <strong>P08</strong> — Cumulative distribution of returns uses integration under a probability density curve.</td></tr>
+      <tr><td class="topic-cell">Kinematics</td><td class="proj-cell"><strong>P12</strong> — The RL agent uses velocity (momentum) and acceleration (rate of momentum change) analogies. Displacement–time and velocity–time graphs mirror price–time charts directly.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- PHYSICS -->
+<div id="physics" class="section">
+  <div class="subj-header">
+    <div class="subj-icon" style="background:rgba(196,122,90,0.1);color:var(--accent3);border:1px solid rgba(196,122,90,0.2)">0625</div>
+    <div>
+      <div class="subj-name">Physics</div>
+      <div class="subj-code">Cambridge IGCSE · 0625 · Extended tier · June 2026</div>
+    </div>
+  </div>
+  <table class="mapping-table">
+    <thead><tr><th>Syllabus topic</th><th>How the ladder project applies it</th></tr></thead>
+    <tbody>
+      <tr><td class="topic-cell">Measurement &amp; units</td><td class="proj-cell"><strong>P01</strong> — Precision of pip values (4 decimal places), significant figures in return calculations, and unit consistency across data frames.</td></tr>
+      <tr><td class="topic-cell">Motion, speed &amp; velocity</td><td class="proj-cell"><strong>P02</strong> — Price momentum is the market equivalent of velocity. Rate of change of price = velocity. <strong>P12</strong> — RL agent modelled on particle in a potential field.</td></tr>
+      <tr><td class="topic-cell">Forces &amp; Newton's laws</td><td class="proj-cell"><strong>P10</strong> — Support and resistance in markets modelled as equilibrium: equal and opposite forces (buying pressure vs selling pressure). Newton's third law as a market metaphor.</td></tr>
+      <tr><td class="topic-cell">Energy, work &amp; power</td><td class="proj-cell"><strong>P07</strong> — Equity curve energy analogy: drawdown = loss of potential energy; recovery = work done by the system. Power = rate of return per unit time.</td></tr>
+      <tr><td class="topic-cell">Pressure</td><td class="proj-cell"><strong>P10</strong> — Order flow pressure (volume of buy vs sell orders) maps to force per unit area. A qualitative but memorable conceptual bridge.</td></tr>
+      <tr><td class="topic-cell">Waves</td><td class="proj-cell"><strong>P08</strong> — Price oscillations modelled as waves. Frequency (how often a cycle repeats), amplitude (size of swing), period (time per cycle) all appear in ARIMA seasonal components.</td></tr>
+      <tr><td class="topic-cell">Electromagnetic spectrum</td><td class="proj-cell"><strong>P05</strong> — Signal-to-noise ratio is a direct physics concept applied to filtering genuine market signal from random news noise.</td></tr>
+      <tr><td class="topic-cell">Electricity &amp; circuits</td><td class="proj-cell"><strong>P09</strong> — Logic gates (AND, OR, NOT) in the rule-based chatbot's decision tree. Boolean logic in circuits = Boolean conditions in trading rules.</td></tr>
+      <tr><td class="topic-cell">Digital electronics</td><td class="proj-cell"><strong>P09</strong> — Binary decisions (buy=1, sell=0) in trading logic map directly to digital logic and truth tables in the Computer Science / Physics overlap.</td></tr>
+      <tr><td class="topic-cell">Experimental skills &amp; data</td><td class="proj-cell"><strong>All projects</strong> — Every backtest follows the scientific method: hypothesis (strategy idea) → experiment (backtest) → measurement (metrics) → conclusion (deploy or discard). Physics laboratory skills transfer directly.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- COMPUTER SCIENCE -->
+<div id="cs" class="section">
+  <div class="subj-header">
+    <div class="subj-icon" style="background:rgba(122,158,200,0.1);color:var(--accent4);border:1px solid rgba(122,158,200,0.2)">0478</div>
+    <div>
+      <div class="subj-name">Computer Science</div>
+      <div class="subj-code">Cambridge IGCSE · 0478 · All grades · June 2026</div>
+    </div>
+  </div>
+  <table class="mapping-table">
+    <thead><tr><th>Syllabus topic</th><th>How the ladder project applies it</th></tr></thead>
+    <tbody>
+      <tr><td class="topic-cell">Data representation</td><td class="proj-cell"><strong>P01</strong> — OHLCV data types, CSV formats, integer vs float pricing. <strong>P03</strong> — Correlation matrix represented as a 2D array.</td></tr>
+      <tr><td class="topic-cell">Data transmission &amp; networks</td><td class="proj-cell"><strong>P05</strong> — Web scraping is an HTTP request/response cycle — the exam's network protocol content in action. <strong>P09</strong> — Chatbot API calls demonstrate client/server architecture.</td></tr>
+      <tr><td class="topic-cell">Hardware &amp; software</td><td class="proj-cell"><strong>P01</strong> — Python environment setup, OS interaction, file system navigation — all systems software concepts. <strong>P04</strong> — SQLite as a software layer above the file system.</td></tr>
+      <tr><td class="topic-cell">Security</td><td class="proj-cell"><strong>P04</strong> — Securing trading journal data with hashing and basic encryption. <strong>P09</strong> — API key security and environment variable storage.</td></tr>
+      <tr><td class="topic-cell">Ethics &amp; impacts</td><td class="proj-cell"><strong>P05, P09, P12</strong> — AI trading ethics, market fairness, HFT social impact. Written as structured essays — perfect exam practice for the ethics questions in Paper 1.</td></tr>
+      <tr><td class="topic-cell">Algorithm design</td><td class="proj-cell"><strong>P02</strong> — SMA and EMA algorithms designed, written in pseudocode, then coded. <strong>P07</strong> — Backtesting loop designed as a flowchart before implementation.</td></tr>
+      <tr><td class="topic-cell">Pseudocode &amp; flowcharts</td><td class="proj-cell"><strong>P09</strong> — Chatbot decision tree drawn as a flowchart before coding. <strong>P10</strong> — Risk management rules written as pseudocode matching Cambridge notation exactly.</td></tr>
+      <tr><td class="topic-cell">Programming constructs</td><td class="proj-cell"><strong>All projects</strong> — Variables, assignment, sequence, selection (if/elif/else), iteration (for/while loops). Project 02 alone covers all five fundamental constructs.</td></tr>
+      <tr><td class="topic-cell">Arrays &amp; data structures</td><td class="proj-cell"><strong>P03</strong> — 2D array for correlation matrix (list of lists). <strong>P11</strong> — Arrays of feature vectors fed into K-Means.</td></tr>
+      <tr><td class="topic-cell">File handling</td><td class="proj-cell"><strong>P01</strong> — Read CSV price files (open, read, close). <strong>P04</strong> — Read/write trading journal to SQLite database file.</td></tr>
+      <tr><td class="topic-cell">Searching &amp; sorting</td><td class="proj-cell"><strong>P07</strong> — Sorting trades by date (bubble sort implemented manually as exam practice, then replaced by Python's built-in). Binary search for price level lookup.</td></tr>
+      <tr><td class="topic-cell">Trace tables &amp; debugging</td><td class="proj-cell"><strong>P02</strong> — Tracing the moving average calculation step by step with 5 data points is a perfect trace table exercise, identical in format to Paper 2 questions.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ENGLISH LANGUAGE -->
+<div id="english" class="section">
+  <div class="subj-header">
+    <div class="subj-icon" style="background:rgba(184,122,184,0.1);color:var(--accent5);border:1px solid rgba(184,122,184,0.2)">0500</div>
+    <div>
+      <div class="subj-name">English Language</div>
+      <div class="subj-code">Cambridge IGCSE First Language English · 0500 · June 2026</div>
+    </div>
+  </div>
+  <table class="mapping-table">
+    <thead><tr><th>Skill area</th><th>How the ladder project practises it</th></tr></thead>
+    <tbody>
+      <tr><td class="topic-cell">Comprehension (Text A)</td><td class="proj-cell"><strong>P05</strong> — Read five forex news articles and extract key information: central banks, rate decisions, economic indicators. Identical in demand to Paper 1 Text A comprehension questions.</td></tr>
+      <tr><td class="topic-cell">Directed writing</td><td class="proj-cell"><strong>P04</strong> — Write a formal trading plan (500 words, structured, audience-aware). Directed writing asks for a specific form and purpose — a trading plan is both.</td></tr>
+      <tr><td class="topic-cell">Summary writing</td><td class="proj-cell"><strong>P05</strong> — Summarise five news articles into three key market themes in 120 words. Pure summary: select, condense, rewrite. The exam task in disguise.</td></tr>
+      <tr><td class="topic-cell">Writer's effect</td><td class="proj-cell"><strong>P05</strong> — Analyse how financial journalists use language to signal market sentiment. Word choice, sentence rhythm, and tone all create the feeling of urgency or calm — identical to writer's effect analysis.</td></tr>
+      <tr><td class="topic-cell">Formal report writing</td><td class="proj-cell"><strong>P07</strong> — Write a backtest performance report: introduction, methodology, results, conclusion. Formal register, section headings, data interpretation — exactly the report writing format examined.</td></tr>
+      <tr><td class="topic-cell">Persuasive writing</td><td class="proj-cell"><strong>P12</strong> — Write a persuasive piece arguing whether AI trading bots should be regulated. Take a clear position, use evidence, anticipate counter-arguments. High-pressure writing practice.</td></tr>
+      <tr><td class="topic-cell">Narrative writing</td><td class="proj-cell"><strong>P01</strong> — Write a first-person account of watching a currency crash in real time. Narrative with chronological structure, tension, and reflection — all examined skills.</td></tr>
+      <tr><td class="topic-cell">Magazine/newspaper article</td><td class="proj-cell"><strong>P09</strong> — Write a magazine article: "How AI is changing forex trading." Audience-appropriate tone, headline, subheading, paragraph structure — the article format for Paper 2.</td></tr>
+      <tr><td class="topic-cell">Speech writing</td><td class="proj-cell"><strong>P12</strong> — Write a speech on AI ethics in financial markets: rhetorical questions, repetition, direct address. The speech format with rhetoric and structure.</td></tr>
+      <tr><td class="topic-cell">Descriptive writing</td><td class="proj-cell"><strong>P01</strong> — Describe what a volatile trading session feels like from the inside. Sensory language, precise detail, vivid imagery — the descriptive piece examined in Paper 2.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- LITERATURE -->
+<div id="lit" class="section">
+  <div class="subj-header">
+    <div class="subj-icon" style="background:rgba(200,120,106,0.1);color:var(--accent6);border:1px solid rgba(200,120,106,0.2)">0475</div>
+    <div>
+      <div class="subj-name">Literature in English</div>
+      <div class="subj-code">Cambridge IGCSE · 0475 · June 2026</div>
+    </div>
+  </div>
+  <table class="mapping-table">
+    <thead><tr><th>Skill area</th><th>How the ladder project practises it</th></tr></thead>
+    <tbody>
+      <tr><td class="topic-cell">Unseen poetry analysis</td><td class="proj-cell"><strong>P05</strong> — Treat forex news headlines as short compressed texts. Analyse word choice, tone, and emotional register for market sentiment. The analytical discipline is identical to unseen poetry.</td></tr>
+      <tr><td class="topic-cell">Unseen prose analysis</td><td class="proj-cell"><strong>P09</strong> — Feed financial prose into the chatbot and analyse narrative voice, how language constructs authority, and how structure guides the reader — core unseen prose skills.</td></tr>
+      <tr><td class="topic-cell">Set text — drama</td><td class="proj-cell"><strong>P12</strong> — Study a set text featuring risk, contract, or debt (The Merchant of Venice maps perfectly). Write a comparative essay on how the playwright's themes connect to algorithmic trading ethics.</td></tr>
+      <tr><td class="topic-cell">Set text — prose</td><td class="proj-cell"><strong>P09</strong> — Study a prose text featuring technology or social change. Write on how AI changes human decision-making — connecting the novel's themes to the chatbot's design decisions.</td></tr>
+      <tr><td class="topic-cell">Language, form &amp; structure</td><td class="proj-cell"><strong>P05</strong> — How news articles use structure to create urgency: inverted pyramid, active verbs, short sentences. Analysing journalistic form is the same skill as analysing poetic form.</td></tr>
+      <tr><td class="topic-cell">Context &amp; meaning</td><td class="proj-cell"><strong>P12</strong> — Historical context of financial crises (2008, hyperinflation in Zimbabwe) studied as literary context. Films like The Big Short treated as modern narrative texts.</td></tr>
+      <tr><td class="topic-cell">Personal response</td><td class="proj-cell"><strong>P04</strong> — Weekly trading journal entries written in reflective first-person voice with opinion supported by evidence. The personal response essay, practiced daily.</td></tr>
+      <tr><td class="topic-cell">Comparison of texts</td><td class="proj-cell"><strong>P05</strong> — Compare two news articles covering the same economic event from different outlets. Same method as comparing two poems: shared theme, contrasting method, evaluative conclusion.</td></tr>
+      <tr><td class="topic-cell">Imagery &amp; metaphor</td><td class="proj-cell"><strong>P02</strong> — Financial language is rich with metaphor: "the market is breathing," "support is holding," "bulls charging." Analyse these as literary devices before coding the indicators they describe.</td></tr>
+      <tr><td class="topic-cell">Coursework portfolio</td><td class="proj-cell"><strong>All projects</strong> — Weekly project logs kept in essay form (600–800 words, reflective, analytical) serve double duty as Literature coursework portfolio material. Writing and coding become the same habit.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</main>
+
+<footer>
+  Cambridge IGCSE syllabuses 0580 · 0606 · 0625 · 0478 · 0500 · 0475 &nbsp;·&nbsp; AI Ladder Projects Year 1–2 &nbsp;·&nbsp; Target: HRT / Jane Street / Citadel
+</footer>
+
+<script>
+function showSection(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: document.querySelector('nav').offsetTop - 1, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>

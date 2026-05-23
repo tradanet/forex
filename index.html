@@ -23,6 +23,7 @@
   --accent4: #7a9ec8;
   --accent5: #b87ab8;
   --accent6: #c8786a;
+  --accent7: #6ec8b0;
   --serif: 'DM Serif Display', serif;
   --sans: 'Instrument Sans', sans-serif;
   --mono: 'DM Mono', monospace;
@@ -289,6 +290,7 @@ main {
 .t-cs { color: #7a9ec8; border-color: rgba(122,158,200,0.25); background: rgba(122,158,200,0.07); }
 .t-eng { color: #b87ab8; border-color: rgba(184,122,184,0.25); background: rgba(184,122,184,0.07); }
 .t-lit { color: #c8786a; border-color: rgba(200,120,106,0.25); background: rgba(200,120,106,0.07); }
+.t-chem { color: #6ec8b0; border-color: rgba(110,200,176,0.25); background: rgba(110,200,176,0.07); }
 
 /* ---- SUBJECT SECTIONS ---- */
 .subj-header {
@@ -406,11 +408,11 @@ footer {
       <p class="header-desc">A complete mapping of six Cambridge IGCSE syllabuses to 12 real AI and algorithmic trading projects — so every hour of project work reinforces exam content, and every exam topic has a living, breathing application.</p>
     </div>
     <div class="stats-box">
-      <div class="stat-item"><span class="stat-label">IGCSE subjects</span><span class="stat-val">6</span></div>
+      <div class="stat-item"><span class="stat-label">IGCSE subjects</span><span class="stat-val">7</span></div>
       <div class="stat-item"><span class="stat-label">Year 1 projects</span><span class="stat-val">5</span></div>
       <div class="stat-item"><span class="stat-label">Year 2 projects</span><span class="stat-val">7</span></div>
       <div class="stat-item"><span class="stat-label">Syllabus topics mapped</span><span class="stat-val">40+</span></div>
-      <div class="stat-item"><span class="stat-label">Target exam</span><span class="stat-val">Jun '26</span></div>
+      <div class="stat-item"><span class="stat-label">Target exam</span><span class="stat-val">Jun '27</span></div>
     </div>
   </div>
 </header>
@@ -424,6 +426,7 @@ footer {
     <button class="nav-btn" onclick="showSection('cs', this)">Computer Science</button>
     <button class="nav-btn" onclick="showSection('english', this)">English Language</button>
     <button class="nav-btn" onclick="showSection('lit', this)">Literature</button>
+    <button class="nav-btn" onclick="showSection('chem', this)">Chemistry</button>
   </div>
 </nav>
 
@@ -432,7 +435,7 @@ footer {
 <!-- OVERVIEW -->
 <div id="overview" class="section active">
   <div class="overview-stats">
-    <div class="ov-card"><div class="ov-num" style="color:var(--accent)">6</div><div class="ov-label">IGCSE subjects mapped to projects</div></div>
+    <div class="ov-card"><div class="ov-num" style="color:var(--accent)">7</div><div class="ov-label">IGCSE subjects mapped to projects</div></div>
     <div class="ov-card"><div class="ov-num" style="color:var(--accent2)">12</div><div class="ov-label">AI ladder projects across 2 years</div></div>
     <div class="ov-card"><div class="ov-num" style="color:var(--accent3)">40+</div><div class="ov-label">Distinct syllabus topics covered</div></div>
     <div class="ov-card"><div class="ov-num" style="color:var(--accent4)">1</div><div class="ov-label">Goal — HRT, Jane Street, Citadel</div></div>
@@ -445,12 +448,13 @@ footer {
     <div class="leg"><div class="leg-dot" style="background:var(--accent4)"></div>Computer Science 0478</div>
     <div class="leg"><div class="leg-dot" style="background:var(--accent5)"></div>English Language 0500</div>
     <div class="leg"><div class="leg-dot" style="background:var(--accent6)"></div>Literature in English 0475</div>
+    <div class="leg"><div class="leg-dot" style="background:var(--accent7)"></div>Chemistry 0620</div>
   </div>
 
   <div class="phase-block">
     <div class="phase-header">
       <span class="phase-label-tag phase-y1">Year 1 — Phase 1</span>
-      <span class="phase-title">Now → IGCSE June 2026 · Foundation in Python, data, and market intuition</span>
+      <span class="phase-title">Now → IGCSE June 2027 · Foundation in Python, data, and market intuition</span>
     </div>
     <div class="projects-grid">
       <div class="project-card">
@@ -463,6 +467,7 @@ footer {
           <span class="tag t-math">0580 Statistics</span>
           <span class="tag t-cs">0478 Programming</span>
           <span class="tag t-phys">0625 Data handling</span>
+          <span class="tag t-chem">0620 Experimental skills</span>
         </div>
       </div>
       <div class="project-card">
@@ -514,6 +519,7 @@ footer {
           <span class="tag t-eng">0500 Comprehension</span>
           <span class="tag t-eng">0500 Writer's effect</span>
           <span class="tag t-lit">0475 Language analysis</span>
+          <span class="tag t-chem">0620 Air quality &amp; data</span>
         </div>
       </div>
     </div>
@@ -547,6 +553,7 @@ footer {
           <span class="tag t-addmath">0606 Inequalities</span>
           <span class="tag t-math">0580 Statistics</span>
           <span class="tag t-cs">0478 Algorithms</span>
+          <span class="tag t-chem">0620 Rate of reaction</span>
         </div>
       </div>
       <div class="project-card">
@@ -583,6 +590,7 @@ footer {
           <span class="tag t-addmath">0606 Permutations</span>
           <span class="tag t-math">0580 Probability</span>
           <span class="tag t-phys">0625 Forces/vectors</span>
+          <span class="tag t-chem">0620 Stoichiometry</span>
         </div>
       </div>
       <div class="project-card">
@@ -619,7 +627,7 @@ footer {
     <div class="subj-icon" style="background:rgba(200,181,96,0.1);color:var(--accent);border:1px solid rgba(200,181,96,0.2)">0580</div>
     <div>
       <div class="subj-name">Mathematics</div>
-      <div class="subj-code">Cambridge IGCSE · 0580 · Extended tier · June 2026</div>
+      <div class="subj-code">Cambridge IGCSE · 0580 · Extended tier · June 2027</div>
     </div>
   </div>
   <table class="mapping-table">
@@ -645,7 +653,7 @@ footer {
     <div class="subj-icon" style="background:rgba(126,184,154,0.1);color:var(--accent2);border:1px solid rgba(126,184,154,0.2)">0606</div>
     <div>
       <div class="subj-name">Additional Mathematics</div>
-      <div class="subj-code">Cambridge IGCSE · 0606 · Single tier · June 2026 — highest priority subject</div>
+      <div class="subj-code">Cambridge IGCSE · 0606 · Single tier · June 2027 — highest priority subject</div>
     </div>
   </div>
   <table class="mapping-table">
@@ -677,7 +685,7 @@ footer {
     <div class="subj-icon" style="background:rgba(196,122,90,0.1);color:var(--accent3);border:1px solid rgba(196,122,90,0.2)">0625</div>
     <div>
       <div class="subj-name">Physics</div>
-      <div class="subj-code">Cambridge IGCSE · 0625 · Extended tier · June 2026</div>
+      <div class="subj-code">Cambridge IGCSE · 0625 · Extended tier · June 2027</div>
     </div>
   </div>
   <table class="mapping-table">
@@ -703,7 +711,7 @@ footer {
     <div class="subj-icon" style="background:rgba(122,158,200,0.1);color:var(--accent4);border:1px solid rgba(122,158,200,0.2)">0478</div>
     <div>
       <div class="subj-name">Computer Science</div>
-      <div class="subj-code">Cambridge IGCSE · 0478 · All grades · June 2026</div>
+      <div class="subj-code">Cambridge IGCSE · 0478 · All grades · June 2027</div>
     </div>
   </div>
   <table class="mapping-table">
@@ -731,7 +739,7 @@ footer {
     <div class="subj-icon" style="background:rgba(184,122,184,0.1);color:var(--accent5);border:1px solid rgba(184,122,184,0.2)">0500</div>
     <div>
       <div class="subj-name">English Language</div>
-      <div class="subj-code">Cambridge IGCSE First Language English · 0500 · June 2026</div>
+      <div class="subj-code">Cambridge IGCSE First Language English · 0500 · June 2027</div>
     </div>
   </div>
   <table class="mapping-table">
@@ -757,7 +765,7 @@ footer {
     <div class="subj-icon" style="background:rgba(200,120,106,0.1);color:var(--accent6);border:1px solid rgba(200,120,106,0.2)">0475</div>
     <div>
       <div class="subj-name">Literature in English</div>
-      <div class="subj-code">Cambridge IGCSE · 0475 · June 2026</div>
+      <div class="subj-code">Cambridge IGCSE · 0475 · June 2027</div>
     </div>
   </div>
   <table class="mapping-table">
@@ -777,10 +785,74 @@ footer {
   </table>
 </div>
 
+<!-- CHEMISTRY -->
+<div id="chem" class="section">
+  <div class="subj-header">
+    <div class="subj-icon" style="background:rgba(110,200,176,0.1);color:var(--accent7);border:1px solid rgba(110,200,176,0.2)">0620</div>
+    <div>
+      <div class="subj-name">Chemistry</div>
+      <div class="subj-code">Cambridge IGCSE · 0620 · Extended tier · June 2027 — a surprisingly rich fit</div>
+    </div>
+  </div>
+  <table class="mapping-table">
+    <thead><tr><th>Syllabus topic</th><th>How the ladder project applies it</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="topic-cell">1. States of matter<br><span style="font-size:11px;color:var(--dim)">Particles, diffusion, kinetic theory</span></td>
+        <td class="proj-cell"><strong>P05</strong> — News sentiment diffuses through the market like gas particles diffusing through space: fast-moving rumours spread first, slower fundamental data follows. Kinetic theory models information flow directly. <strong>P08</strong> — Price volatility maps to particle speed distribution — high volatility = high temperature (wide spread of particle speeds).</td>
+      </tr>
+      <tr>
+        <td class="topic-cell">2. Atomic structure<br><span style="font-size:11px;color:var(--dim)">Electrons, periodic table, bonding</span></td>
+        <td class="proj-cell"><strong>P03</strong> — Currency pairs as elements: each has unique properties (volatility, liquidity, correlation). The periodic table's logic of predicting behaviour from position mirrors predicting currency behaviour from macro data. <strong>P11</strong> — Clustering currencies by regime is the same reasoning as grouping elements into periods and groups by shared electron configuration.</td>
+      </tr>
+      <tr>
+        <td class="topic-cell">3. Stoichiometry<br><span style="font-size:11px;color:var(--dim)">Mole, reacting masses, concentration, yield</span></td>
+        <td class="proj-cell"><strong>P10</strong> — Mole calculations are ratio reasoning under precision constraints — exactly the skill needed for position sizing. Percentage yield (actual ÷ theoretical × 100) is structurally identical to win rate (actual wins ÷ total trades × 100). <strong>P07</strong> — Titration calculations (finding exact concentration from volume) mirror finding exact entry price from order flow data.</td>
+      </tr>
+      <tr>
+        <td class="topic-cell">4. Electrochemistry<br><span style="font-size:11px;color:var(--dim)">Electrolysis, fuel cells, half-equations</span></td>
+        <td class="proj-cell"><strong>P04</strong> — Electroplating as a model for compounding: small deposits accumulate over many cycles to coat a surface, just as reinvested profits compound account equity. <strong>P12</strong> — Fuel cells (anode/cathode, energy release) map to the RL agent's reward/penalty system: oxidation at the anode = trade entry cost, reduction at cathode = captured profit.</td>
+      </tr>
+      <tr>
+        <td class="topic-cell">5. Chemical energetics<br><span style="font-size:11px;color:var(--dim)">Exo/endothermic, activation energy, bond energy</span></td>
+        <td class="proj-cell"><strong>P06</strong> — Activation energy = the minimum signal strength a model needs before it generates a trade signal. Exothermic reactions (energy released) = profitable trades; endothermic (energy absorbed) = losing trades. Reaction pathway diagrams mirror equity curve diagrams with drawdown as the activation energy hill. <strong>P07</strong> — Bond energy calculations (energy in − energy out) directly model P&amp;L: entry cost − exit revenue = net gain/loss.</td>
+      </tr>
+      <tr>
+        <td class="topic-cell">6. Rate of reaction<br><span style="font-size:11px;color:var(--dim)">Collision theory, graphs, concentration, temperature</span></td>
+        <td class="proj-cell"><strong>P07</strong> — Rate of reaction graphs (concentration vs time) are structurally identical to drawdown recovery curves. Collision theory is the best analogy for market liquidity: more particles (orders) in a smaller volume (tighter spread) = faster reaction (faster price discovery). <strong>P08</strong> — Increasing temperature increases reaction rate; increasing market volatility increases price movement rate — the analogy is exact and memorable.</td>
+      </tr>
+      <tr>
+        <td class="topic-cell">6. Equilibrium &amp; Le Chatelier<br><span style="font-size:11px;color:var(--dim)">Reversible reactions, Haber process, position of equilibrium</span></td>
+        <td class="proj-cell"><strong>P06, P07</strong> — Le Chatelier's Principle is one of the most powerful market analogies in chemistry: a market at equilibrium (fair value) subjected to a stress (central bank rate change) shifts its position to oppose the stress, then finds a new equilibrium. This is precisely how price discovery works. The Haber process (optimising temperature and pressure for yield) mirrors optimising model hyperparameters for performance.</td>
+      </tr>
+      <tr>
+        <td class="topic-cell">6. Redox reactions<br><span style="font-size:11px;color:var(--dim)">Oxidation numbers, oxidising/reducing agents</span></td>
+        <td class="proj-cell"><strong>P03</strong> — Redox as a zero-sum system: one currency gains (is reduced, gains electrons) as its pair loses (is oxidised, loses electrons). EUR/USD: when EUR gains value, USD loses it. Oxidation number changes map to pip movement. Writing half-equations is structurally identical to decomposing a currency return into component factors.</td>
+      </tr>
+      <tr>
+        <td class="topic-cell">8. The Periodic Table<br><span style="font-size:11px;color:var(--dim)">Group trends, halogens, transition metals, catalysis</span></td>
+        <td class="proj-cell"><strong>P11</strong> — Transition metals as catalysts (speed up reaction without being consumed) map to AI models as catalysts for decision-making — they accelerate the signal-to-trade pipeline without being part of the trade itself. <strong>P02</strong> — Group trends (predictable behaviour within a family) reinforce the idea that correlated currency pairs move predictably relative to each other.</td>
+      </tr>
+      <tr>
+        <td class="topic-cell">10. Chemistry of the environment<br><span style="font-size:11px;color:var(--dim)">Water, fertilisers, air quality, pollutants</span></td>
+        <td class="proj-cell"><strong>P05</strong> — Environmental data (CO₂ ppm, pollution indices) are real financial data: carbon credits, ESG scores, and climate risk are now traded assets. Scraping and analysing air quality data is a genuine extension of the news sentiment scraper — and a growing area of quant finance.</td>
+      </tr>
+      <tr>
+        <td class="topic-cell">11. Organic chemistry<br><span style="font-size:11px;color:var(--dim)">Homologous series, polymers, functional groups, cracking</span></td>
+        <td class="proj-cell"><strong>P09, P12</strong> — Polymers (many monomers chained together) are the best analogy for ensemble ML models (many weak learners combined into one strong predictor). Cracking long-chain hydrocarbons into shorter, more useful ones maps to feature engineering — breaking raw price data into useful signals. Homologous series (same functional group, increasing chain length, predictable properties) maps to model hyperparameter scaling.</td>
+      </tr>
+      <tr>
+        <td class="topic-cell">12. Experimental techniques<br><span style="font-size:11px;color:var(--dim)">Separation, identification, analysis, planning</span></td>
+        <td class="proj-cell"><strong>All projects</strong> — Paper 6 (Alternative to Practical) tests planning, analysis, and evaluation — the identical skills used in every backtest. Plan the experiment (define the strategy) → collect data (run the backtest) → analyse results (Sharpe, drawdown) → evaluate limitations (overfitting, data snooping) → suggest improvements. Chemistry lab skills and quant research skills are the same discipline in different clothes.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 </main>
 
 <footer>
-  Cambridge IGCSE syllabuses 0580 · 0606 · 0625 · 0478 · 0500 · 0475 &nbsp;·&nbsp; AI Ladder Projects Year 1–2 &nbsp;·&nbsp; Target: HRT / Jane Street / Citadel
+  Cambridge IGCSE syllabuses 0580 · 0606 · 0625 · 0478 · 0500 · 0475 · 0620 &nbsp;·&nbsp; AI Ladder Projects Year 1–2 &nbsp;·&nbsp; Target: HRT / Jane Street / Citadel
 </footer>
 
 <script>

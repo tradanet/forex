@@ -643,6 +643,328 @@ footer {
   .mapping-table { font-size: 13px; }
   .mapping-table .topic-cell { min-width: 100px; }
 }
+/* ---- SQUAREPOINT CASE STUDY ---- */
+.sq-hero {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 16px;
+  padding: 52px 48px;
+  margin-bottom: 28px;
+  position: relative;
+  overflow: hidden;
+}
+.sq-hero::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 380px; height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,181,96,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+.sq-eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.sq-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--accent); }
+.sq-hero-title {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+.sq-hero-title em { font-style: italic; color: var(--accent); }
+.sq-hero-body {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.85;
+  max-width: 680px;
+  margin-bottom: 32px;
+}
+.sq-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.sq-metric {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 18px;
+  border-top: 2px solid var(--accent);
+}
+.sq-metric-num {
+  font-family: var(--serif);
+  font-size: 30px;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.sq-metric-label { font-size: 11px; color: var(--muted); line-height: 1.5; font-family: var(--mono); }
+
+.sq-origin {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px 44px;
+  margin-bottom: 28px;
+}
+.sq-section-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: 12px;
+}
+.sq-sub-title {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+.sq-sub-title em { font-style: italic; color: var(--accent); }
+.sq-body { font-size: 14px; color: var(--muted); line-height: 1.85; max-width: 760px; margin-bottom: 20px; }
+
+.sq-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-left: 1px solid var(--border2);
+  margin: 24px 0;
+  padding-left: 0;
+}
+.sq-tl-item {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 20px;
+  padding: 14px 0 14px 24px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.sq-tl-item:last-child { border-bottom: none; }
+.sq-tl-item::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 20px;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+}
+.sq-tl-year { font-family: var(--mono); font-size: 11px; color: var(--accent); padding-top: 1px; }
+.sq-tl-text { font-size: 13px; color: var(--muted); line-height: 1.65; }
+.sq-tl-text strong { color: var(--text); font-weight: 500; }
+
+.sq-strategies {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px 44px;
+  margin-bottom: 28px;
+}
+.sq-strat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
+.sq-strat-card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 22px 20px;
+  transition: border-color .2s;
+}
+.sq-strat-card:hover { border-color: rgba(200,181,96,0.3); }
+.sq-strat-num { font-family: var(--mono); font-size: 10px; color: var(--accent); margin-bottom: 8px; }
+.sq-strat-title { font-size: 14px; font-weight: 600; margin-bottom: 10px; }
+.sq-strat-body { font-size: 12px; color: var(--muted); line-height: 1.7; margin-bottom: 12px; }
+.sq-math {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--accent);
+  background: rgba(200,181,96,0.05);
+  border: 1px solid rgba(200,181,96,0.15);
+  border-radius: 6px;
+  padding: 8px 12px;
+  line-height: 1.6;
+}
+
+.sq-mapping {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px 44px;
+  margin-bottom: 28px;
+}
+.sq-map-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
+.sq-map-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  background: var(--bg3);
+  transition: border-color .2s;
+}
+.sq-map-card:hover { border-color: rgba(200,181,96,0.3); }
+.sq-map-proj {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--accent);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.sq-map-title { font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+.sq-map-squarepoint { font-size: 12px; color: var(--muted); line-height: 1.6; margin-bottom: 8px; }
+.sq-map-squarepoint strong { color: var(--text); font-family: var(--mono); font-size: 11px; font-weight: 400; }
+.sq-bridge {
+  font-size: 11px;
+  color: var(--accent);
+  font-family: var(--mono);
+  background: rgba(200,181,96,0.05);
+  border: 1px solid rgba(200,181,96,0.12);
+  border-radius: 5px;
+  padding: 6px 10px;
+  line-height: 1.5;
+}
+.sq-bridge::before { content: '→ sq: '; opacity: .6; }
+
+.sq-career {
+  background: var(--text);
+  color: var(--bg);
+  border-radius: 16px;
+  padding: 48px;
+  margin-bottom: 28px;
+  position: relative;
+  overflow: hidden;
+}
+.sq-career::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.03) 3px, rgba(0,0,0,0.03) 6px);
+  pointer-events: none;
+}
+.sq-career .sq-section-label { color: rgba(0,0,0,0.35); }
+.sq-career .sq-sub-title { color: var(--bg); }
+.sq-career .sq-sub-title em { color: var(--accent2); font-style: italic; }
+.sq-career .sq-body { color: rgba(0,0,0,0.55); }
+.sq-ladder {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 20px 0;
+}
+.sq-ladder-step {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 20px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  align-items: start;
+}
+.sq-ladder-step:last-child { border-bottom: none; }
+.sq-ls-age {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: rgba(0,0,0,0.4);
+  padding-top: 2px;
+}
+.sq-ls-content {}
+.sq-ls-title { font-size: 14px; font-weight: 600; margin-bottom: 4px; color: var(--bg); }
+.sq-ls-desc { font-size: 12px; color: rgba(0,0,0,0.5); line-height: 1.65; }
+.sq-ls-tag {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+.sq-ls-tag.gold { background: rgba(200,181,96,0.15); color: var(--accent2); border: 1px solid rgba(200,181,96,0.3); }
+.sq-ls-tag.green { background: rgba(126,184,154,0.15); color: #2a7a5a; border: 1px solid rgba(126,184,154,0.3); }
+
+.sq-hiring {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px 44px;
+  margin-bottom: 28px;
+}
+.sq-hiring-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 20px;
+}
+.sq-hire-card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 22px;
+  transition: border-color .2s;
+}
+.sq-hire-card:hover { border-color: rgba(200,181,96,0.3); }
+.sq-hire-role { font-family: var(--mono); font-size: 11px; color: var(--accent); margin-bottom: 8px; }
+.sq-hire-title { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+.sq-hire-body { font-size: 12px; color: var(--muted); line-height: 1.7; }
+.sq-hire-reqs {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.sq-hire-req {
+  font-size: 11px;
+  color: var(--dim);
+  font-family: var(--mono);
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  line-height: 1.5;
+}
+.sq-hire-req::before { content: '✓'; color: var(--accent); flex-shrink: 0; }
+
+.sq-closing {
+  background: rgba(200,181,96,0.04);
+  border: 1px solid rgba(200,181,96,0.2);
+  border-radius: 16px;
+  padding: 44px 48px;
+  margin-bottom: 28px;
+}
+.sq-closing-title {
+  font-family: var(--serif);
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+.sq-closing-title em { font-style: italic; color: var(--accent); }
+.sq-closing-body { font-size: 14px; color: var(--muted); line-height: 1.85; max-width: 720px; }
+
+@media (max-width: 900px) {
+  .sq-metrics { grid-template-columns: repeat(2, 1fr); }
+  .sq-hiring-grid { grid-template-columns: 1fr; }
+  .sq-hero, .sq-origin, .sq-strategies, .sq-mapping, .sq-career, .sq-hiring, .sq-closing { padding: 28px 20px; }
+}
 </style>
 </head>
 <body>
@@ -674,6 +996,7 @@ footer {
     <button class="nav-btn" onclick="showSection('english', this)">English Language</button>
     <button class="nav-btn" onclick="showSection('lit', this)">Literature</button>
     <button class="nav-btn" onclick="showSection('chem', this)">Chemistry</button>
+    <button class="nav-btn" onclick="showSection('squarepoint', this)">Squarepoint</button>
   </div>
 </nav>
 
@@ -1270,6 +1593,287 @@ footer {
     </tbody>
   </table>
 </div>
+
+<!-- SQUAREPOINT CASE STUDY -->
+<div id="squarepoint" class="section">
+
+  <!-- HERO -->
+  <div class="sq-hero">
+    <div class="sq-eyebrow">Case Study — Proof of Destination</div>
+    <div class="sq-hero-title">Squarepoint Capital.<br>This is what <em>your projects</em><br>are building toward.</div>
+    <p class="sq-hero-body">Squarepoint Capital is one of the world's most respected quantitative investment firms — systematic, fully automated, mathematically rigorous, and deeply focused on FX among other markets. Every technique Melusi is building in his 12 ladder projects — moving averages, correlation matrices, backtesting engines, volatility models, RL trading agents — is in active daily use at firms like Squarepoint, at institutional scale. This page maps the ladder projects directly to Squarepoint's published strategies, hiring requirements, and mathematical frameworks. The destination is real. The path is documented.</p>
+    <div class="sq-metrics">
+      <div class="sq-metric">
+        <div class="sq-metric-num">$182B</div>
+        <div class="sq-metric-label">Regulatory AUM · Nov 2025 · Form ADV filing</div>
+      </div>
+      <div class="sq-metric">
+        <div class="sq-metric-num">4,299</div>
+        <div class="sq-metric-label">Active positions across global markets including FX</div>
+      </div>
+      <div class="sq-metric">
+        <div class="sq-metric-num">17</div>
+        <div class="sq-metric-label">Cities worldwide · London is a primary research hub</div>
+      </div>
+      <div class="sq-metric">
+        <div class="sq-metric-num">0</div>
+        <div class="sq-metric-label">Discretionary traders — fully automated, 100% systematic</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ORIGIN STORY -->
+  <div class="sq-origin">
+    <div class="sq-section-label">// Origin — why this story matters to Melusi</div>
+    <div class="sq-sub-title">Built by <em>mathematicians,</em> not traders.</div>
+    <p class="sq-body">Squarepoint's origin is the most important part of its story for Melusi's purposes. It was not founded by Wall Street veterans with decades of trading experience. It was founded by graduates of École Polytechnique — France's most elite mathematics and engineering institution — who started building systematic trading models inside Lehman Brothers Tokyo in 2000. The founders were researchers first. The trading was the output of the research. That is exactly the path Melusi is on.</p>
+    <div class="sq-timeline">
+      <div class="sq-tl-item">
+        <div class="sq-tl-year">2000</div>
+        <div class="sq-tl-text"><strong>nQuant founded inside Lehman Brothers Tokyo</strong> by École Polytechnique graduates Olivier Durantel and Gregoire Schneider. Initial focus: long/short equity strategies built on quantitative models. Mathematics first, markets second.</div>
+      </div>
+      <div class="sq-tl-item">
+        <div class="sq-tl-year">2003–04</div>
+        <div class="sq-tl-text"><strong>Future co-founders join as fresh graduates</strong> — Antoine Fillet and Maxime Fortin complete the four-partner team. They join as junior researchers with strong mathematical backgrounds. Not as experienced traders. This is the entry point Melusi is building toward.</div>
+      </div>
+      <div class="sq-tl-item">
+        <div class="sq-tl-year">2005–08</div>
+        <div class="sq-tl-text"><strong>nQuant expands to London and goes global.</strong> Diversifies into low-latency strategies across multiple asset classes including FX. The London office becomes a primary research hub — where it remains today.</div>
+      </div>
+      <div class="sq-tl-item">
+        <div class="sq-tl-year">2008</div>
+        <div class="sq-tl-text"><strong>Lehman collapses.</strong> The entire nQuant team transfers intact to Barclays — taking all IP, models, and infrastructure with them. A systematic quant team's value survives the failure of its parent institution because the models are the asset.</div>
+      </div>
+      <div class="sq-tl-item">
+        <div class="sq-tl-year">Dec 2014</div>
+        <div class="sq-tl-text"><strong>Squarepoint Capital spins out of Barclays</strong> as the Volcker Rule forces banks to divest proprietary trading. The team acquires full ownership of all IP, employees, and trading infrastructure. Independent since day one of 2015. The researchers became the owners.</div>
+      </div>
+      <div class="sq-tl-item">
+        <div class="sq-tl-year">2025</div>
+        <div class="sq-tl-text"><strong>$182 billion in regulatory AUM.</strong> 17 cities. Millions of trades executed daily by algorithms written by researchers. The original founders — who started as junior quant researchers in 2000 — still lead the firm today. Twenty-five years from junior researcher to $182 billion.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STRATEGIES — WHAT THEY ACTUALLY DO -->
+  <div class="sq-strategies">
+    <div class="sq-section-label">// What they actually do — and where the ladder projects connect</div>
+    <div class="sq-sub-title">The <em>mathematics</em> Melusi is studying<br>is the mathematics Squarepoint runs on.</div>
+    <p class="sq-body">Squarepoint does not publish its strategies publicly. But its hiring requirements, regulatory filings, and conference sponsorships reveal the mathematical core precisely. Every strategy below is directly traceable to skills Melusi's ladder projects are building.</p>
+    <div class="sq-strat-grid">
+      <div class="sq-strat-card">
+        <div class="sq-strat-num">// STRATEGY 01</div>
+        <div class="sq-strat-title">Statistical Arbitrage — Intraday</div>
+        <p class="sq-strat-body">Mean-reversion strategies based on cointegration between related securities — including currency pairs. When two correlated instruments diverge beyond a statistical threshold, the model predicts reversion and trades the spread.</p>
+        <div class="sq-math">dS = θ(μ − S)dt + σdW<br>Ornstein-Uhlenbeck process · mean-reversion speed θ</div>
+      </div>
+      <div class="sq-strat-card">
+        <div class="sq-strat-num">// STRATEGY 02</div>
+        <div class="sq-strat-title">FX Systematic Strategies</div>
+        <p class="sq-strat-body">Currency pair trading using systematic signals derived from price data, macro indicators, and order flow. FX is explicitly one of Squarepoint's core markets — they are active in liquid currency pairs including EUR/USD, GBP/USD, and USD/JPY.</p>
+        <div class="sq-math">Signal = f(momentum, carry, value, sentiment)<br>Multi-factor FX model</div>
+      </div>
+      <div class="sq-strat-card">
+        <div class="sq-strat-num">// STRATEGY 03</div>
+        <div class="sq-strat-title">Volatility Surface Arbitrage</div>
+        <p class="sq-strat-body">Identifying mispricings in the implied volatility surface of options across strike and expiry dimensions. Requires deep statistical modelling of volatility regimes — the same techniques used in Melusi's Project 8 (ARIMA volatility forecasting).</p>
+        <div class="sq-math">σ_implied(K, T) vs σ_model(K, T)<br>Vol surface fitting · Bachelier / Heston models</div>
+      </div>
+      <div class="sq-strat-card">
+        <div class="sq-strat-num">// STRATEGY 04</div>
+        <div class="sq-strat-title">ML Alpha Generation</div>
+        <p class="sq-strat-body">Machine learning models trained on historical market data to generate trading signals — alpha — that are uncorrelated with traditional factors. Squarepoint sponsors ICML and KDD, the premier ML research conferences, and actively recruits ML researchers.</p>
+        <div class="sq-math">α = ML_model(features) − expected_return<br>Gradient boosting · LSTM · ensemble methods</div>
+      </div>
+      <div class="sq-strat-card">
+        <div class="sq-strat-num">// STRATEGY 05</div>
+        <div class="sq-strat-title">CTA / Short-Term Momentum</div>
+        <p class="sq-strat-body">Trend-following strategies across futures (equity indices, fixed income, commodities) and FX. The systematic detection of price momentum — exactly what Melusi's moving average projects model — is the conceptual foundation of CTA strategies at institutional scale.</p>
+        <div class="sq-math">Momentum_signal = EMA(fast) − EMA(slow)<br>Scaled by volatility normalisation</div>
+      </div>
+      <div class="sq-strat-card">
+        <div class="sq-strat-num">// STRATEGY 06</div>
+        <div class="sq-strat-title">Portfolio Diversification Engine</div>
+        <p class="sq-strat-body">A systematic framework for combining uncorrelated strategies across asset classes, frequencies, and geographies to maximise risk-adjusted returns. The correlation matrix that Melusi builds in Project 3 is a simplified version of the covariance matrix at the heart of Squarepoint's portfolio construction.</p>
+        <div class="sq-math">w* = argmin(w'Σw) s.t. w'μ = r_target<br>Modern Portfolio Theory · Markowitz optimisation</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT-TO-SQUAREPOINT MAPPING -->
+  <div class="sq-mapping">
+    <div class="sq-section-label">// Direct mapping — Melusi's 12 projects → Squarepoint's daily work</div>
+    <div class="sq-sub-title">Not inspired by Squarepoint.<br><em>Directly equivalent</em> to Squarepoint.</div>
+    <p class="sq-body">Each mapping below shows exactly where a ladder project connects to a live Squarepoint strategy or infrastructure component. These are not analogies. They are the same mathematical operations, at different scale.</p>
+    <div class="sq-map-grid">
+      <div class="sq-map-card">
+        <div class="sq-map-proj">Project 02 · Moving Average Calculator</div>
+        <div class="sq-map-title">→ CTA Momentum Signal Engine</div>
+        <p class="sq-map-squarepoint">Squarepoint's CTA desk uses volatility-normalised EMA crossover signals as one component of its trend-following system across FX and futures. <strong>The EMA formula Melusi codes from scratch is the foundation of this signal.</strong></p>
+        <div class="sq-bridge">EMA(fast, t) − EMA(slow, t) / σ(t) = normalised momentum</div>
+      </div>
+      <div class="sq-map-card">
+        <div class="sq-map-proj">Project 03 · Currency Correlation Heatmap</div>
+        <div class="sq-map-title">→ Portfolio Covariance Matrix</div>
+        <p class="sq-map-squarepoint">Squarepoint's portfolio construction requires a full covariance matrix across all traded instruments. The 2D correlation matrix Melusi builds for 10 currency pairs is the conceptual and mathematical precursor to that system. <strong>Same matrix. More instruments.</strong></p>
+        <div class="sq-bridge">Σ_ij = cov(r_i, r_j) · full portfolio covariance engine</div>
+      </div>
+      <div class="sq-map-card">
+        <div class="sq-map-proj">Project 07 · Backtesting Engine</div>
+        <div class="sq-map-title">→ Research Infrastructure Core</div>
+        <p class="sq-map-squarepoint">Squarepoint states explicitly: "The majority of investments are based on backtests performed on historical market data." Every strategy they run was validated by a backtesting engine before it was deployed. <strong>Melusi is building Squarepoint's most critical research tool.</strong></p>
+        <div class="sq-bridge">Sharpe = E[r] / σ[r] · √252 · annualised signal quality</div>
+      </div>
+      <div class="sq-map-card">
+        <div class="sq-map-proj">Project 08 · ARIMA Volatility Forecasting</div>
+        <div class="sq-map-title">→ Vol Surface Modelling</div>
+        <p class="sq-map-squarepoint">Squarepoint runs volatility surface arbitrage strategies that require forecasting implied volatility across strike and expiry. ARIMA is the classical time-series foundation before extending to GARCH and stochastic vol models. <strong>Project 08 is the entry point to their vol desk.</strong></p>
+        <div class="sq-bridge">ARIMA(p,d,q) → GARCH(1,1) → Heston stochastic vol</div>
+      </div>
+      <div class="sq-map-card">
+        <div class="sq-map-proj">Project 10 · Risk Management Calculator</div>
+        <div class="sq-map-title">→ Position Sizing & Risk Engine</div>
+        <p class="sq-map-squarepoint">Squarepoint's automated system sizes every position using a systematic risk framework — maximum drawdown constraints, volatility-scaled position limits, correlation-adjusted exposure. <strong>Melusi's Kelly Criterion calculator is the conceptual core of this engine.</strong></p>
+        <div class="sq-bridge">f* = (bp − q) / b · Kelly · scaled by vol regime</div>
+      </div>
+      <div class="sq-map-card">
+        <div class="sq-map-proj">Project 11 · Clustering Currency Regimes</div>
+        <div class="sq-map-title">→ Market Regime Detection</div>
+        <p class="sq-map-squarepoint">Squarepoint adapts strategy parameters to prevailing market regimes — trending, mean-reverting, high volatility. K-Means regime clustering is one of the standard approaches to detecting these states. <strong>Project 11 is market regime detection in its pure form.</strong></p>
+        <div class="sq-bridge">regime = argmin_k ‖features − centroid_k‖² · regime-conditional params</div>
+      </div>
+      <div class="sq-map-card">
+        <div class="sq-map-proj">Project 12 · RL Paper Trading Bot</div>
+        <div class="sq-map-title">→ Execution Optimisation Agent</div>
+        <p class="sq-map-squarepoint">Reinforcement learning is increasingly used in systematic trading for execution optimisation — learning when to split orders, when to be aggressive vs passive, how to minimise market impact. <strong>Project 12 is the architectural foundation of next-generation execution systems.</strong></p>
+        <div class="sq-bridge">Q(s,a) ← Q(s,a) + α[r + γ·max Q(s',a') − Q(s,a)] · Bellman update</div>
+      </div>
+      <div class="sq-map-card">
+        <div class="sq-map-proj">Projects 06 + 13–15 · ML Price Models</div>
+        <div class="sq-map-title">→ ML Alpha Research Programme</div>
+        <p class="sq-map-squarepoint">Squarepoint sponsors ICML and KDD because they are actively building ML-driven alpha strategies. Logistic regression, LSTMs, transformers, and ensemble models trained on market data — exactly what Melusi's advanced projects build — are the current frontier of their research programme.</p>
+        <div class="sq-bridge">α_ML = f_θ(X_t) · trained on historical features · validated OOS</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAREER LADDER -->
+  <div class="sq-career">
+    <div class="sq-section-label">// Career ladder — Melusi to Squarepoint</div>
+    <div class="sq-sub-title">The path from Harare to<br><em>Squarepoint London</em> is mapped.</div>
+    <p class="sq-body">Squarepoint is not the first stop. It is the destination after the foundation is built. Here is the realistic, specific ladder — every step grounded in how quant careers actually develop.</p>
+    <div class="sq-ladder">
+      <div class="sq-ladder-step">
+        <div class="sq-ls-age">Now — 2027<br><span style="font-size:10px;opacity:.5">Age 25–27</span></div>
+        <div class="sq-ls-content">
+          <div class="sq-ls-title">IGCSE + Ladder Projects 1–5</div>
+          <p class="sq-ls-desc">Build the mathematical foundation. Every project goes on GitHub. Pass IGCSE with A* in Mathematics and Additional Mathematics. These grades are the entry ticket to Laney College's calculus track.</p>
+          <span class="sq-ls-tag gold">foundation phase · forex + python + statistics</span>
+        </div>
+      </div>
+      <div class="sq-ladder-step">
+        <div class="sq-ls-age">2027–2029<br><span style="font-size:10px;opacity:.5">Age 27–29</span></div>
+        <div class="sq-ls-content">
+          <div class="sq-ls-title">Laney College + Projects 6–12</div>
+          <p class="sq-ls-desc">Calculus I–III, Linear Algebra, Statistics, Data Structures. 4.0 GPA target — non-negotiable. Complete Projects 6–12. Publish the arXiv paper. Apply to Berkeley and Stanford.</p>
+          <span class="sq-ls-tag gold">laney · 4.0 gpa · arxiv paper · transfer application</span>
+        </div>
+      </div>
+      <div class="sq-ladder-step">
+        <div class="sq-ls-age">2029–2031<br><span style="font-size:10px;opacity:.5">Age 29–31</span></div>
+        <div class="sq-ls-content">
+          <div class="sq-ls-title">UC Berkeley — Mathematics / Data Science / EECS</div>
+          <p class="sq-ls-desc">Join Berkeley's Algorithmic Research Group or a quantitative finance research group. Co-author a second paper. Target summer internships at quant-adjacent firms (Akuna Capital, DRW, Optiver). Build the professional network.</p>
+          <span class="sq-ls-tag gold">berkeley · research group · quant internship</span>
+        </div>
+      </div>
+      <div class="sq-ladder-step">
+        <div class="sq-ls-age">2031–2033<br><span style="font-size:10px;opacity:.5">Age 31–33</span></div>
+        <div class="sq-ls-content">
+          <div class="sq-ls-title">Masters in Financial Engineering or Applied Mathematics</div>
+          <p class="sq-ls-desc">Target: CMU MSCF, Columbia MFE, NYU Courant, or Berkeley MFE. The masters credential is the standard entry requirement for junior quant researcher roles at firms like Squarepoint. Two published papers + a Berkeley degree + an MFE is a compelling profile.</p>
+          <span class="sq-ls-tag gold">cmu / columbia mfe · stochastic calculus · derivatives pricing</span>
+        </div>
+      </div>
+      <div class="sq-ladder-step">
+        <div class="sq-ls-age">2033–2035<br><span style="font-size:10px;opacity:.5">Age 33–35</span></div>
+        <div class="sq-ls-content">
+          <div class="sq-ls-title">Tier 2 Quant Firm — Junior Researcher Role</div>
+          <p class="sq-ls-desc">Akuna Capital, DRW Trading, IMC Trading, Optiver. London or Chicago offices. Two to three years building a live trading record and learning production quant infrastructure. This is where the theory meets real capital.</p>
+          <span class="sq-ls-tag green">akuna · drw · imc · optiver · first live trading record</span>
+        </div>
+      </div>
+      <div class="sq-ladder-step">
+        <div class="sq-ls-age">2035+<br><span style="font-size:10px;opacity:.5">Age 35+</span></div>
+        <div class="sq-ls-content">
+          <div class="sq-ls-title">Squarepoint Capital · Quant Researcher — FX / ML Alpha</div>
+          <p class="sq-ls-desc">Junior Quant Researcher or Senior Researcher role at Squarepoint London. A profile with Berkeley mathematics, an MFE, two published papers, and three years of live trading research at a tier-2 firm is the exact profile Squarepoint's early careers page describes. The journey is ten years. The destination is real.</p>
+          <span class="sq-ls-tag green">squarepoint london · fx systematic · ml alpha research</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT SQUAREPOINT LOOKS FOR -->
+  <div class="sq-hiring">
+    <div class="sq-section-label">// What Squarepoint actually hires for — from their own job postings</div>
+    <div class="sq-sub-title">Their requirements.<br><em>Melusi's curriculum.</em></div>
+    <p class="sq-body">Squarepoint publishes specific hiring criteria for their early career and internship roles. Every requirement maps directly to something the ladder projects teach. This is not coincidence — these are the universal requirements of systematic quantitative research.</p>
+    <div class="sq-hiring-grid">
+      <div class="sq-hire-card">
+        <div class="sq-hire-role">// Investment Internship — Quant Researcher</div>
+        <div class="sq-hire-title">Intern Quant Researcher</div>
+        <p class="sq-hire-body">Offered to penultimate year students. The experience gained maps directly to ladder projects already completed.</p>
+        <div class="sq-hire-reqs">
+          <div class="sq-hire-req">Degree in Mathematics, Physics, Statistics, Machine Learning, Mathematical Finance or equivalent → <em>Melusi: Berkeley Mathematics / Data Science</em></div>
+          <div class="sq-hire-req">Strong quantitative and analytical skills → <em>Projects 1–12 build exactly this</em></div>
+          <div class="sq-hire-req">Programming proficiency (Python, C++) → <em>Python from Project 1 · C++ introduced at Berkeley</em></div>
+          <div class="sq-hire-req">Curiosity and entrepreneurial drive → <em>10 years of self-directed learning is the evidence</em></div>
+        </div>
+      </div>
+      <div class="sq-hire-card">
+        <div class="sq-hire-role">// Early Career — Full Time</div>
+        <div class="sq-hire-title">Junior Quant Researcher</div>
+        <p class="sq-hire-body">Entry-level full-time role for recent graduates or those with a few years of experience. The target role after Berkeley + MFE.</p>
+        <div class="sq-hire-reqs">
+          <div class="sq-hire-req">Statistical modelling and backtesting experience → <em>Projects 7, 8, 11 are exactly this</em></div>
+          <div class="sq-hire-req">Experience with time-series data and financial models → <em>All 12 projects use time-series market data</em></div>
+          <div class="sq-hire-req">Collaborative, inquisitive, pragmatic → <em>Squarepoint's published philosophy — three words that describe the war room</em></div>
+          <div class="sq-hire-req">Willingness to question your own work → <em>Every backtest is a falsifiable experiment</em></div>
+        </div>
+      </div>
+      <div class="sq-hire-card">
+        <div class="sq-hire-role">// Technology — Software Developer</div>
+        <div class="sq-hire-title">Graduate Software Developer</div>
+        <p class="sq-hire-body">Alternative entry point — building the research and trading infrastructure that the quant researchers use. Dad's 30-year track record makes this role deeply relevant to the family.</p>
+        <div class="sq-hire-reqs">
+          <div class="sq-hire-req">CS or computer engineering degree → <em>Laney + Berkeley CS coursework</em></div>
+          <div class="sq-hire-req">Experience with large data systems → <em>The SMS Lab Assistant platform Melusi helps build</em></div>
+          <div class="sq-hire-req">Motivated by challenging problems with a lot of data → <em>12 projects of increasingly complex data pipelines</em></div>
+        </div>
+      </div>
+      <div class="sq-hire-card">
+        <div class="sq-hire-role">// Squarepoint's Philosophy</div>
+        <div class="sq-hire-title">What They Actually Value</div>
+        <p class="sq-hire-body">Squarepoint's published philosophy is three words. Each one maps to something the war room produces.</p>
+        <div class="sq-hire-reqs">
+          <div class="sq-hire-req"><strong>Pragmatic</strong> — realistic, commercially minded, focused on the work at hand. Every backtest either works or it doesn't. There is no room for wishful thinking.</div>
+          <div class="sq-hire-req"><strong>Inquisitive</strong> — remain curious, anticipate new trends, develop better solutions. A student who built 12 projects from scratch demonstrates this without saying a word.</div>
+          <div class="sq-hire-req"><strong>Collaborative</strong> — flat structure, spontaneous huddles, access to founders. The war room is a family that operates exactly this way.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLOSING -->
+  <div class="sq-closing">
+    <div class="sq-section-label">// The point of this case study</div>
+    <div class="sq-closing-title">Squarepoint was built by researchers<br>who started where <em>Melusi is starting.</em></div>
+    <p class="sq-closing-body">The founders of Squarepoint were junior quantitative researchers in their mid-twenties when they joined Lehman Brothers Tokyo in 2000. They had strong mathematics degrees, curiosity, and the willingness to build models and test them against reality. Twenty-five years later they run $182 billion. The path from junior researcher to that outcome is not mysterious — it is documented, it is repeatable, and it begins with exactly the skills Melusi's ladder projects are building. The IGCSE Additional Mathematics exam in June 2027 is not a school requirement. It is the first line of Melusi's application to a firm like Squarepoint. Treat it that way.</p>
+  </div>
+
+</div>
+<!-- END SQUAREPOINT -->
 
 </main>
 

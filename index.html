@@ -965,6 +965,289 @@ footer {
   .sq-hiring-grid { grid-template-columns: 1fr; }
   .sq-hero, .sq-origin, .sq-strategies, .sq-mapping, .sq-career, .sq-hiring, .sq-closing { padding: 28px 20px; }
 }
+/* ---- VITALIK SECTION ---- */
+.vt-hero {
+  border: 1px solid var(--border2);
+  border-radius: 16px;
+  padding: 56px 48px;
+  background: var(--bg2);
+  margin-bottom: 28px;
+  position: relative;
+  overflow: hidden;
+}
+.vt-hero::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(126,184,154,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.vt-eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent2);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.vt-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--accent2); }
+.vt-hero-title {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 50px);
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+.vt-hero-title em { font-style: italic; color: var(--accent2); }
+.vt-hero-body {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.85;
+  max-width: 700px;
+  margin-bottom: 32px;
+}
+.vt-pull-quote {
+  border-left: 2px solid var(--accent2);
+  padding: 16px 24px;
+  font-family: var(--serif);
+  font-size: 18px;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.65;
+  max-width: 660px;
+  background: rgba(126,184,154,0.04);
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 0;
+}
+.vt-pull-quote em { color: var(--accent2); font-style: normal; font-weight: 500; }
+
+.vt-block {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px 44px;
+  margin-bottom: 28px;
+}
+.vt-section-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: 12px;
+}
+.vt-sub-title {
+  font-family: var(--serif);
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+.vt-sub-title em { font-style: italic; color: var(--accent2); }
+.vt-body { font-size: 14px; color: var(--muted); line-height: 1.85; max-width: 760px; margin-bottom: 20px; }
+
+/* What Vitalik did timeline */
+.vt-did-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 24px;
+}
+.vt-did-card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 22px 20px;
+  transition: border-color .2s;
+}
+.vt-did-card:hover { border-color: rgba(126,184,154,0.3); }
+.vt-did-card.full { grid-column: 1 / -1; background: rgba(126,184,154,0.04); border-color: rgba(126,184,154,0.15); }
+.vt-did-age {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--accent2);
+  margin-bottom: 8px;
+  letter-spacing: .06em;
+}
+.vt-did-title { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+.vt-did-body { font-size: 13px; color: var(--muted); line-height: 1.7; }
+.vt-did-tag {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 3px 9px;
+  border-radius: 4px;
+  margin-top: 10px;
+  background: rgba(126,184,154,0.08);
+  color: var(--accent2);
+  border: 1px solid rgba(126,184,154,0.2);
+}
+
+/* Myth vs fact */
+.vt-honest {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+  margin-top: 20px;
+}
+.vt-honest-title {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--dim);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.vt-honest-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.vt-honest-col-hd {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.vt-not { color: var(--accent3); }
+.vt-yes { color: var(--accent2); }
+.vt-honest-item {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+.vt-honest-item:last-child { border-bottom: none; }
+.vt-honest-item::before { flex-shrink: 0; margin-top: 1px; }
+.vt-not-item::before { content: '✗'; color: var(--accent3); }
+.vt-yes-item::before { content: '✓'; color: var(--accent2); }
+
+/* The lesson grid */
+.vt-lesson-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin-top: 24px;
+}
+.vt-lesson-card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 22px 20px;
+  transition: border-color .2s;
+}
+.vt-lesson-card:hover { border-color: rgba(126,184,154,0.3); }
+.vt-lesson-num { font-family: var(--mono); font-size: 10px; color: var(--accent2); margin-bottom: 8px; }
+.vt-lesson-title { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+.vt-lesson-vitalik { font-size: 12px; color: var(--muted); line-height: 1.65; margin-bottom: 10px; }
+.vt-lesson-melusi {
+  font-size: 12px;
+  color: var(--accent);
+  background: rgba(200,181,96,0.05);
+  border: 1px solid rgba(200,181,96,0.15);
+  border-radius: 6px;
+  padding: 8px 12px;
+  line-height: 1.6;
+  font-family: var(--mono);
+}
+.vt-lesson-melusi::before { content: 'melusi: '; opacity: .5; }
+
+/* College hat section */
+.vt-college-hat {
+  background: var(--text);
+  color: var(--bg);
+  border-radius: 16px;
+  padding: 52px 48px;
+  margin-bottom: 28px;
+  position: relative;
+  overflow: hidden;
+}
+.vt-college-hat::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.025) 3px, rgba(0,0,0,0.025) 6px);
+  pointer-events: none;
+}
+.vt-college-hat::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; right: -60px;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(126,184,154,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+.vt-college-hat .vt-section-label { color: rgba(0,0,0,0.3); }
+.vt-college-hat .vt-sub-title { color: var(--bg); }
+.vt-college-hat .vt-sub-title em { color: var(--accent2); }
+.vt-college-hat .vt-body { color: rgba(0,0,0,0.55); }
+.vt-hat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+  margin-top: 24px;
+  position: relative;
+  z-index: 1;
+}
+.vt-hat-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 10px;
+  padding: 20px 22px;
+  transition: border-color .2s;
+}
+.vt-hat-card:hover { border-color: rgba(126,184,154,0.4); }
+.vt-hat-igcse {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: rgba(0,0,0,0.35);
+  margin-bottom: 4px;
+  letter-spacing: .06em;
+}
+.vt-hat-college {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--accent2);
+  margin-bottom: 10px;
+  letter-spacing: .06em;
+}
+.vt-hat-title { font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--bg); }
+.vt-hat-body { font-size: 12px; color: rgba(0,0,0,0.5); line-height: 1.65; }
+
+/* Closing */
+.vt-closing {
+  background: rgba(126,184,154,0.04);
+  border: 1px solid rgba(126,184,154,0.2);
+  border-radius: 16px;
+  padding: 44px 48px;
+  margin-bottom: 28px;
+}
+.vt-closing-title {
+  font-family: var(--serif);
+  font-size: clamp(22px, 3vw, 34px);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+.vt-closing-title em { font-style: italic; color: var(--accent2); }
+.vt-closing-body { font-size: 14px; color: var(--muted); line-height: 1.85; max-width: 720px; }
+
+@media (max-width: 900px) {
+  .vt-did-grid { grid-template-columns: 1fr; }
+  .vt-honest-grid { grid-template-columns: 1fr; }
+  .vt-hero, .vt-block, .vt-college-hat, .vt-closing { padding: 28px 20px; }
+  .vt-did-card.full { grid-column: auto; }
+}
 </style>
 </head>
 <body>
@@ -997,6 +1280,7 @@ footer {
     <button class="nav-btn" onclick="showSection('lit', this)">Literature</button>
     <button class="nav-btn" onclick="showSection('chem', this)">Chemistry</button>
     <button class="nav-btn" onclick="showSection('squarepoint', this)">Squarepoint</button>
+    <button class="nav-btn" onclick="showSection('vitalik', this)">Vitalik</button>
   </div>
 </nav>
 
@@ -1874,6 +2158,180 @@ footer {
 
 </div>
 <!-- END SQUAREPOINT -->
+
+<!-- VITALIK SECTION -->
+<div id="vitalik" class="section">
+
+  <!-- HERO -->
+  <div class="vt-hero">
+    <div class="vt-eyebrow">Role Model · Wear the College Hat Now</div>
+    <div class="vt-hero-title">Vitalik Buterin<br>was already <em>doing college-level work</em><br>during high school.</div>
+    <p class="vt-hero-body">This is not a story about genius. It is a story about choosing the right level of ambition for the time you have available. Vitalik was a teenager in Toronto attending an ordinary secondary school. He chose not to wait for university to start doing serious intellectual work. He co-founded Bitcoin Magazine at 17. He was writing technical analysis of cryptographic systems that most computer science graduates could not produce. He was not ahead because he was smarter than everyone else. He was ahead because he refused to accept that high school was the ceiling of what he was allowed to think about. That is the lesson. That is the hat Melusi needs to put on today.</p>
+    <div class="vt-pull-quote">The IGCSE exam is not the goal. It is the <em>minimum bar</em>. The real work happens above it — and it starts now, not in three years at Laney College.</div>
+  </div>
+
+  <!-- WHAT HE ACTUALLY DID — DOCUMENTED FACTS -->
+  <div class="vt-block">
+    <div class="vt-section-label">// What Vitalik actually did during high school — documented facts only</div>
+    <div class="vt-sub-title">Not myth. Not inspiration porn.<br><em>Specific, verifiable, replicable.</em></div>
+    <p class="vt-body">There is a lot of mythology around Vitalik Buterin. This section separates documented fact from exaggeration — because the real story is more useful than the myth. The myth says "he was a once-in-a-generation genius." The documented facts say something far more actionable: he was a teenager who chose to work at a higher level than his peers, in public, using free tools, and built a reputation before he built a product.</p>
+
+    <div class="vt-did-grid">
+      <div class="vt-did-card">
+        <div class="vt-did-age">Age 17 · 2011</div>
+        <div class="vt-did-title">Co-founded Bitcoin Magazine</div>
+        <p class="vt-did-body">Not a blog. Not a school project. A serious publication dedicated to Bitcoin — one of the first and most important in the space. He was not just a contributor. He helped launch it, wrote for it regularly, and built its credibility through the quality of his analysis. His co-founder Mihai Popescu recognised him from his writing in forums first.</p>
+        <span class="vt-did-tag">published · co-founder · editor</span>
+      </div>
+      <div class="vt-did-card">
+        <div class="vt-did-age">Age 17–18 · 2011–2012</div>
+        <div class="vt-did-title">Technical writer and Bitcoin analyst</div>
+        <p class="vt-did-body">His articles explained Bitcoin's mechanics, economic incentives, cryptographic foundations, and limitations — at a depth that required genuine understanding of computer science, economics, and mathematics simultaneously. He gained credibility in the early Bitcoin community not through code, but through the quality of his written thinking. Writing was his first product.</p>
+        <span class="vt-did-tag">writing · technical analysis · community credibility</span>
+      </div>
+      <div class="vt-did-card">
+        <div class="vt-did-age">2011–2012 · ongoing</div>
+        <div class="vt-did-title">Deep participation in crypto communities</div>
+        <p class="vt-did-body">His intellectual development happened primarily in online forums and IRC discussions with early Bitcoin developers and cryptographers — people years or decades older, with professional engineering backgrounds. He treated these communities as his real classroom. School was the formal credential. The forums were where he learned.</p>
+        <span class="vt-did-tag">forums · irc · peer network above his age group</span>
+      </div>
+      <div class="vt-did-card">
+        <div class="vt-did-age">2012–2013 · pre-Ethereum</div>
+        <div class="vt-did-title">Formed the core ideas behind Ethereum</div>
+        <p class="vt-did-body">He became increasingly convinced that Bitcoin's scripting language was fundamentally limited — that what was needed was a general-purpose programmable blockchain. This insight did not arrive after years of industry experience. It arrived during late high school and early university, from sustained analytical thinking about a technical system he had studied obsessively. The thinking came first. The building came after.</p>
+        <span class="vt-did-tag">systems thinking · identifying limitations · conceptual design</span>
+      </div>
+      <div class="vt-did-card full">
+        <div class="vt-did-age">The honest picture — what he had NOT yet done by end of high school</div>
+        <div class="vt-did-title">He had not yet built Ethereum. And that matters.</div>
+        <p class="vt-did-body">Ethereum came after high school — at university and shortly after dropping out. By the end of high school, Vitalik was a published writer, a co-founder of a media platform, and an analytical voice in a technical community. He was not yet a startup founder in the modern sense, not yet building large-scale engineering systems, and not yet the figure the world would later recognise. The lesson is not "build Ethereum during high school." The lesson is: do the writing, the analysis, the community participation, the serious intellectual work that makes the big thing possible later. The foundation, not the monument.</p>
+        <span class="vt-did-tag">writing → analysis → community → design → ethereum · the correct order</span>
+      </div>
+    </div>
+
+    <!-- MYTH VS FACT -->
+    <div class="vt-honest">
+      <div class="vt-honest-title">// Myth vs documented reality — what to take from this story</div>
+      <div class="vt-honest-grid">
+        <div>
+          <div class="vt-honest-col-hd vt-not">✗ What he did NOT do during high school</div>
+          <div class="vt-honest-item vt-not-item">Created Ethereum — that came after, aged 19</div>
+          <div class="vt-honest-item vt-not-item">Founded a funded technology startup</div>
+          <div class="vt-honest-item vt-not-item">Worked at a traditional tech company</div>
+          <div class="vt-honest-item vt-not-item">Built large-scale production engineering systems</div>
+          <div class="vt-honest-item vt-not-item">Had a university degree or formal CS education</div>
+        </div>
+        <div>
+          <div class="vt-honest-col-hd vt-yes">✓ What he DID do during high school</div>
+          <div class="vt-honest-item vt-yes-item">Co-founded and wrote for Bitcoin Magazine at 17</div>
+          <div class="vt-honest-item vt-yes-item">Published technical analysis of real cryptographic systems</div>
+          <div class="vt-honest-item vt-yes-item">Built a reputation in serious technical communities</div>
+          <div class="vt-honest-item vt-yes-item">Formed original ideas by deeply analysing existing systems</div>
+          <div class="vt-honest-item vt-yes-item">Worked at a level several years above his formal education</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LESSONS MAPPED TO MELUSI -->
+  <div class="vt-block">
+    <div class="vt-section-label">// Five lessons from Vitalik's high school years — mapped to Melusi</div>
+    <div class="vt-sub-title">Not "be like Vitalik."<br><em>Extract the replicable principles.</em></div>
+    <p class="vt-body">Vitalik is not a template. Ethereum was a unique, unrepeatable achievement. But the habits, methods, and choices he made during his secondary school years are entirely replicable — and they map directly to what Melusi is doing and should be doing between now and June 2027.</p>
+    <div class="vt-lesson-grid">
+      <div class="vt-lesson-card">
+        <div class="vt-lesson-num">// Lesson 01</div>
+        <div class="vt-lesson-title">Write publicly about what you are learning</div>
+        <p class="vt-lesson-vitalik">Vitalik's forum posts and Bitcoin Magazine articles were not marketing. They were thinking in public. The discipline of explaining a concept clearly enough that strangers can understand it is one of the most powerful learning accelerators known. Writing revealed gaps in his own understanding before they would have been exposed later.</p>
+        <div class="vt-lesson-melusi">write a weekly blog post on the tradanet forex site explaining what each project taught you. one post per project. public, technical, honest about what you did not understand.</div>
+      </div>
+      <div class="vt-lesson-card">
+        <div class="vt-lesson-num">// Lesson 02</div>
+        <div class="vt-lesson-title">Build credibility through writing before building through code</div>
+        <p class="vt-lesson-vitalik">Ethereum was possible partly because the community already knew Vitalik's thinking from his writing. When he published the Ethereum whitepaper, serious people read it because they already respected his analytical mind. The writing was not separate from the technical work. It was the proof of concept for the technical work.</p>
+        <div class="vt-lesson-melusi">the tradanet forex site is already this platform. each project page should include a written explanation of the mathematics, the design decisions, and what the results mean. that writing is the portfolio employers and universities read first.</div>
+      </div>
+      <div class="vt-lesson-card">
+        <div class="vt-lesson-num">// Lesson 03</div>
+        <div class="vt-lesson-title">Seek communities operating above your current level</div>
+        <p class="vt-lesson-vitalik">Vitalik learned more from Bitcoin forums and IRC discussions with senior developers than from any formal classroom. He chose to be the least knowledgeable person in the room — consistently. That discomfort is where the fastest learning happens. His peers at school were not his intellectual community. The forum was.</p>
+        <div class="vt-lesson-melusi">join quantopian community, r/algotrading, arxiv.org/q-fin discussion groups. post your projects. ask questions. be willing to be wrong publicly. that community is your real classroom — laney college is the credential.</div>
+      </div>
+      <div class="vt-lesson-card">
+        <div class="vt-lesson-num">// Lesson 04</div>
+        <div class="vt-lesson-title">Identify limitations in existing systems — that is where new ideas live</div>
+        <p class="vt-lesson-vitalik">Vitalik's most important intellectual contribution during high school was not building something new. It was identifying something fundamental that was missing from Bitcoin's design — a general-purpose programming layer. He found the gap by studying the system deeply, not by having a eureka moment. The insight was analytical, not creative.</p>
+        <div class="vt-lesson-melusi">when backtesting a forex strategy, do not just measure if it works. ask why it works, when it fails, and what the model cannot see. write that analysis down. that is how the next project idea is found.</div>
+      </div>
+      <div class="vt-lesson-card">
+        <div class="vt-lesson-num">// Lesson 05</div>
+        <div class="vt-lesson-title">The foundation during high school enables the monument after</div>
+        <p class="vt-lesson-vitalik">Ethereum did not come from nowhere. It came from two years of writing, analysing, questioning, and building a technical vocabulary that made it possible to design an entirely new system. The high school years were not preparation for the real work. They were the first phase of it. The phases are not separate. They compound.</p>
+        <div class="vt-lesson-melusi">the igcse projects are not practice for the real work at laney and berkeley. they are the first phase of the same continuous work. the code written for project 1 will be refactored in project 6. the ideas in project 6 will become the paper in project 12.</div>
+      </div>
+      <div class="vt-lesson-card">
+        <div class="vt-lesson-num">// Lesson 06</div>
+        <div class="vt-lesson-title">Formal education is the credential, not the education</div>
+        <p class="vt-lesson-vitalik">Vitalik attended school and then briefly attended the University of Waterloo — before dropping out to work on Ethereum full-time when it became clear the work was more important than the degree. He was not anti-education. He was clear-eyed about what formal institutions provide — credentials and structure — and what they do not provide, which is the frontier of current knowledge.</p>
+        <div class="vt-lesson-melusi">the igcse exam is the credential that opens the laney college door. berkeley is the credential that opens the squarepoint door. the actual education — the deep knowledge — comes from the projects, the writing, and the communities. do not confuse the two.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE COLLEGE HAT -->
+  <div class="vt-college-hat">
+    <div class="vt-section-label">// The college hat — what it means to wear it now</div>
+    <div class="vt-sub-title">You are not an IGCSE student<br>who also does projects.<br>You are a <em>student engineer</em><br>who also does IGCSE.</div>
+    <p class="vt-body" style="color:rgba(0,0,0,0.55);max-width:700px">The hat you wear determines how you approach every hour of work. An IGCSE student asks: "what do I need to know for the exam?" A student engineer asks: "what problem am I solving, and what mathematics does it require?" The exam answers the second question perfectly — but only if you come to it from the engineer's direction, not the student's. Vitalik did not approach his technical writing as "content for a publication." He approached it as thinking that needed to be done — and the publication was how he shared it. The framing is everything. Here is what the college hat looks like on each part of Melusi's current work.</p>
+    <div class="vt-hat-grid">
+      <div class="vt-hat-card">
+        <div class="vt-hat-igcse">igcse student asks:</div>
+        <div class="vt-hat-college">student engineer asks:</div>
+        <div class="vt-hat-title">Moving averages (Add. Maths)</div>
+        <p class="vt-hat-body"><em>Student:</em> "What is the formula for EMA?" <em>Engineer:</em> "Why does the EMA weight recent prices more heavily — and what is the exact mathematical relationship between the smoothing constant and the effective lookback period?"</p>
+      </div>
+      <div class="vt-hat-card">
+        <div class="vt-hat-igcse">igcse student asks:</div>
+        <div class="vt-hat-college">student engineer asks:</div>
+        <div class="vt-hat-title">Probability (Mathematics)</div>
+        <p class="vt-hat-body"><em>Student:</em> "What is the expected value formula?" <em>Engineer:</em> "Given my backtest win rate of 54% and average win/loss ratio of 1.3, what is my expected value per trade, and at what ratio does the strategy break even?"</p>
+      </div>
+      <div class="vt-hat-card">
+        <div class="vt-hat-igcse">igcse student asks:</div>
+        <div class="vt-hat-college">student engineer asks:</div>
+        <div class="vt-hat-title">Matrices (Add. Maths)</div>
+        <p class="vt-hat-body"><em>Student:</em> "How do I multiply two 2×2 matrices?" <em>Engineer:</em> "Why is the correlation matrix always symmetric, and why does a 1 on the diagonal always mean the variable is perfectly correlated with itself?"</p>
+      </div>
+      <div class="vt-hat-card">
+        <div class="vt-hat-igcse">igcse student asks:</div>
+        <div class="vt-hat-college">student engineer asks:</div>
+        <div class="vt-hat-title">Differentiation (Add. Maths)</div>
+        <p class="vt-hat-body"><em>Student:</em> "How do I differentiate x³?" <em>Engineer:</em> "Gradient descent updates model weights by moving in the direction of the negative gradient of the loss function — so what does it mean if the gradient is zero? Has the model converged, or is it stuck in a local minimum?"</p>
+      </div>
+      <div class="vt-hat-card">
+        <div class="vt-hat-igcse">igcse student asks:</div>
+        <div class="vt-hat-college">student engineer asks:</div>
+        <div class="vt-hat-title">Rate of reaction (Chemistry)</div>
+        <p class="vt-hat-body"><em>Student:</em> "How does temperature affect reaction rate?" <em>Engineer:</em> "Market volatility increases the rate at which prices move — exactly as temperature increases collision frequency. What does this mean for a trend-following strategy in high-volatility regimes vs low-volatility regimes?"</p>
+      </div>
+      <div class="vt-hat-card">
+        <div class="vt-hat-igcse">igcse student asks:</div>
+        <div class="vt-hat-college">student engineer asks:</div>
+        <div class="vt-hat-title">Report writing (English)</div>
+        <p class="vt-hat-body"><em>Student:</em> "What is the correct format for a formal report?" <em>Engineer:</em> "My backtest produced a Sharpe ratio of 1.4 in-sample and 0.6 out-of-sample. Write a research report that explains what caused the degradation and what changes to the model's feature set might address it."</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLOSING -->
+  <div class="vt-closing">
+    <div class="vt-section-label">// The point of this tab</div>
+    <div class="vt-closing-title">Vitalik did not become extraordinary<br>after school. He became extraordinary<br><em>during</em> school, by refusing to<br>be limited by it.</div>
+    <p class="vt-closing-body">He did not wait for a university professor to assign him a problem worth solving. He found the problem himself — in the gap between what Bitcoin could do and what a programmable blockchain could do — and started thinking about it seriously while he was still sitting in a secondary school classroom in Toronto. The exam was a formality. The intellectual work was the point. Melusi's situation is directly analogous. The IGCSE exam is June 2027. That is 24 months away. That is enough time to complete all 12 ladder projects, write a technical blog post for each one, build a reputation in quantitative finance communities online, and arrive at Laney College in September 2027 not as a fresh student but as a practitioner who happens to also need the formal credential. That is the Vitalik approach. Wear the college hat. The IGCSE will take care of itself.</p>
+  </div>
+
+</div>
+<!-- END VITALIK -->
 
 </main>
 
